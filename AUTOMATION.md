@@ -1,5 +1,34 @@
 # Automatic profile updates
 
+## Open-ended AI artwork (awaiting account activation)
+
+`api/ai-banner.py` is the new AI-powered image endpoint. It sends the complete
+current bio to `google/gemini-3.1-flash-lite` through Vercel AI Gateway, rather
+than choosing from a list of topics. A noun, phrase, non-English text, or invented
+word can receive an original vector illustration. Interpretations are generated
+by a model and cannot be guaranteed perfect for every possible string.
+
+The renderer preserves the bio text, validates generated geometry, and rejects
+scripts, external resources, event attributes, unsupported elements, and unsafe
+paint values. It shares a bounded cache of artwork by the complete bio inside
+each warm function instance. This cache is ephemeral; cold instances may make
+another generation request. AI requests consume Gateway credits.
+
+Activation is currently blocked. A real authenticated request returned HTTP 403
+with `customer_verification_required`: the connected Vercel team must add a valid
+payment method before Gateway will serve AI requests. No card, billing plan, or
+credit purchase has been configured by the agent. Verify the account at
+`https://vercel.com/sterix-z/~/ai`, then run a successful image request before
+changing `live-profile.json` to the AI endpoint. The existing profile endpoint
+continues serving the previous behavior until that switch is verified.
+
+Vercel supplies the current invocation's OIDC token in `x-vercel-oidc-token`.
+No token is committed or returned in responses. Missing credits or authentication
+produce HTTP 503 with an explicit service error; this endpoint never silently
+substitutes the preset picker and calls that AI generation.
+
+## Current published endpoint
+
 Edit your name and bio using **Edit profile** on GitHub, then reload your profile.
 The banner is a live SVG served by the `zaw-live-profile` Vercel project. Each
 request reads your current public profile and renders the name, exact bio text,

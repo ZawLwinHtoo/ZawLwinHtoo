@@ -79,13 +79,21 @@ def fit_lines(value, width, height, largest=134, smallest=18):
     raise ValueError("Text exceeds the supported profile bio length")
 
 
-def render_banner(profile, mobile=False):
+def render_banner(profile, mobile=False, visual=None):
     # Retain the layout, but match both the headline and illustration to the bio.
     root = ET.fromstring(art.hero(mobile=mobile, write=False))
     name = clean(profile.get("name")) or profile["login"]
     bio = clean(profile.get("bio"))
-    theme, illustration = motion.bio_figure(bio or name, 309 if mobile else 884,
-                                          485 if mobile else 245, .76 if mobile else .95)
+    if visual is None:
+        theme, illustration = motion.bio_figure(bio or name, 309 if mobile else 884,
+                                              485 if mobile else 245, .76 if mobile else .95)
+    else:
+        subject, drawing = visual
+        theme = 'semantic'
+        illustration = (f'<g id="bio-illustration" data-theme="semantic" data-subject="{escape(subject, quote=True)}" '
+                        f'transform="translate({309 if mobile else 884} {485 if mobile else 245}) scale({.76 if mobile else .95})">'
+                        '<defs><clipPath id="bio-ai-clip"><circle r="139"/></clipPath></defs>'
+                        f'<g clip-path="url(#bio-ai-clip)">{drawing}</g></g>')
     root.find("s:title", NS).text = name + (" / " + bio if bio else "")
     identity = root.find(".//s:g[@id='identity']/s:text", NS)
     identity.text = name.upper()
@@ -125,7 +133,7 @@ def render_banner(profile, mobile=False):
         elif clean(node.text) == "CURIOUS BY DEFAULT":
             node.text = "GITHUB / PROFILE"
         elif clean(node.text) == "BUG / 001":
-            node.text = theme.upper() + " / 001"
+            node.text = visual[0].upper()[:20] if visual else theme.upper() + " / 001"
         elif theme != "bugs" and clean(node.text) == "CODE. BREAK. LEARN. REPEAT.":
             node.text = "SAY HELLO. KEEP EXPLORING." if theme == "hello" else "CREATE. EXPLORE. KEEP GOING."
     ET.register_namespace("", NS["s"])
