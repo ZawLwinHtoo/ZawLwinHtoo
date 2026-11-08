@@ -26,7 +26,7 @@ jobs:
         run: >-
           python -m pip install --only-binary=:all: llama-cpp-python==0.3.36
           --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
-      - name: Generate real bio and example illustrations without an API
+      - name: Interpret bio locally and compose free OpenMoji illustrations
         run: python tools/generate_free_art.py --examples
       - name: Save reviewable artwork on the test branch
         run: |

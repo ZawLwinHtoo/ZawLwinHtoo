@@ -1,6 +1,6 @@
 <picture>
-  <source media="(max-width: 600px)" srcset="https://zaw-live-profile.vercel.app/api/banner?mobile=1&amp;v=4">
-  <img src="https://zaw-live-profile.vercel.app/api/banner?v=4" alt="Current GitHub bio with its matching animated illustration" width="100%">
+  <source media="(max-width: 600px)" srcset="assets/profile-banner-mobile.svg?v=ef4f6759eeda">
+  <img src="assets/profile-banner.svg?v=465473846d4c" alt="Zaw Lwin Htoo. Enjoy Learning" width="100%">
 </picture>
 
 <p align="center">
@@ -71,3 +71,6 @@ Languages from my projects. Always room for something new.
     <img src="assets/afterword.svg?v=01cb70b38ee6" alt="Every bug is a plot twist. See what I'm building next." width="100%">
   </picture>
 </a>
+
+<!-- bio-art-credit -->
+<p><sub>Bio illustrations by <a href="https://openmoji.org/">OpenMoji</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></sub></p>

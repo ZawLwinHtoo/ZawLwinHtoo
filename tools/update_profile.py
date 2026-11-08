@@ -15,6 +15,7 @@ import xml.etree.ElementTree as ET
 import generate_artwork as art
 import profile_motion as motion
 import project_art
+from free_visual import cached_visual
 
 ROOT = Path(__file__).resolve().parents[1]
 OWNER = "ZawLwinHtoo"
@@ -140,9 +141,9 @@ def render_banner(profile, mobile=False, visual=None):
     return ET.tostring(root, encoding="unicode")
 
 
-def banner(profile, mobile=False):
+def banner(profile, mobile=False, visual=None):
     filename = "profile-banner-mobile.svg" if mobile else "profile-banner.svg"
-    (art.ASSETS / filename).write_text(render_banner(profile, mobile), encoding="utf-8", newline="\n")
+    (art.ASSETS / filename).write_text(render_banner(profile, mobile, visual=visual), encoding="utf-8", newline="\n")
 
 
 def project_title(repo):
@@ -162,22 +163,16 @@ def generate(profile, repos):
         raise ValueError("Refusing to generate a different user's profile")
     projects = public_projects(repos, profile["login"])
     art.ASSETS.mkdir(exist_ok=True)
-    banner(profile)
-    banner(profile, mobile=True)
+    bio_text = clean(profile.get('bio')) or clean(profile.get('name')) or profile['login']
+    visual = cached_visual(bio_text, ROOT / 'assets/bio-art.json')
+    banner(profile, visual=visual)
+    banner(profile, mobile=True, visual=visual)
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     name = escape(clean(profile.get("name")) or profile["login"])
     bio = escape(clean(profile.get("bio")))
-    configuration = ROOT / 'live-profile.json'
-    live_url = json.loads(configuration.read_text())['banner_url'] if configuration.exists() else None
-    if live_url:
-        desktop_source = escape(live_url + '?v=4', quote=True)
-        mobile_source = escape(live_url + '?mobile=1&v=4', quote=True)
-        banner_alt = 'Current GitHub bio with its matching animated illustration'
-        introduction = ''
-    else:
-        desktop_source, mobile_source = 'assets/profile-banner.svg', 'assets/profile-banner-mobile.svg'
-        banner_alt = name + '. ' + bio
-        introduction = f'<p align="center">\n  <b>Hi, I\'m {name}.</b><br>\n  {bio}\n</p>\n\n'
+    desktop_source, mobile_source = 'assets/profile-banner.svg', 'assets/profile-banner-mobile.svg'
+    banner_alt = name + '. ' + bio
+    introduction = ''
     header = f'''<picture>
   <source media="(max-width: 600px)" srcset="{mobile_source}">
   <img src="{desktop_source}" alt="{banner_alt}" width="100%">
@@ -218,6 +213,10 @@ def generate(profile, repos):
         version = sha256(asset.read_text(encoding='utf-8').encode('utf-8')).hexdigest()[:12]
         return f'{match.group(1)}="assets/{match.group(2)}?v={version}"'
     readme = re.sub(r'(src|srcset)="assets/([^"?]+\.svg)(?:\?[^\"]*)?"', versioned, readme)
+    if '<!-- bio-art-credit -->' not in readme:
+        readme += ('\n<!-- bio-art-credit -->\n<p><sub>Bio illustrations by '
+                   '<a href="https://openmoji.org/">OpenMoji</a> · '
+                   '<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></sub></p>\n')
     (ROOT / "README.md").write_text(readme, encoding="utf-8", newline="\n")
     for asset in art.ASSETS.glob("*.svg"):
         ET.parse(asset)

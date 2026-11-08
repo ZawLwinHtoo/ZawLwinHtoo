@@ -1,101 +1,73 @@
-# Automatic profile updates
+# Free profile automation
 
-## Open-ended AI artwork (awaiting account activation)
+Everything runs in `ZawLwinHtoo/ZawLwinHtoo` using standard GitHub-hosted Ubuntu
+Actions runners. No paid API, payment method, separate hosting account,
+Hugging Face account, or API key is required. Standard runners are free for
+public repositories; no larger runner or billable model service is used.
 
-`api/ai-banner.py` is the new AI-powered image endpoint. It sends the complete
-current bio to `google/gemini-3.1-flash-lite` through Vercel AI Gateway, rather
-than choosing from a list of topics. A noun, phrase, non-English text, or invented
-word can receive an original vector illustration. Interpretations are generated
-by a model and cannot be guaranteed perfect for every possible string.
+## How bio updates work
 
-The renderer preserves the bio text, validates generated geometry, and rejects
-scripts, external resources, event attributes, unsupported elements, and unsafe
-paint values. It shares a bounded cache of artwork by the complete bio inside
-each warm function instance. This cache is ephemeral; cold instances may make
-another generation request. AI requests consume Gateway credits.
+1. Edit your name or bio in GitHub's **Edit profile** form.
+2. The refresh workflow reads the public profile and compares the complete bio
+   with the saved artwork metadata.
+3. When it changes, a public Qwen model runs locally on the Actions CPU. It
+   interprets the entire bio and chooses a main subject and supporting emoji.
+4. Matching OpenMoji SVG illustrations are embedded into the banner. All files
+   are committed to this repository, and the README uses content-hashed URLs.
+5. Reload your profile to see the new banner.
 
-Activation is currently blocked. A real authenticated request returned HTTP 403
-with `customer_verification_required`: the connected Vercel team must add a valid
-payment method before Gateway will serve AI requests. No card, billing plan, or
-credit purchase has been configured by the agent. Verify the account at
-`https://vercel.com/sterix-z/~/ai`, then run a successful image request before
-changing `live-profile.json` to the AI endpoint. The existing profile endpoint
-continues serving the previous behavior until that switch is verified.
+The workflow checks approximately every five minutes. Scheduling can be delayed
+by GitHub, and the first model download/inference adds some time. Changes are
+not instantaneous. For a manual refresh, open **Actions → Refresh profile → Run
+workflow**. An already open README image cannot observe a saved bio by itself.
 
-Vercel supplies the current invocation's OIDC token in `x-vercel-oidc-token`.
-No token is committed or returned in responses. Missing credits or authentication
-produce HTTP 503 with an explicit service error; this endpoint never silently
-substitutes the preset picker and calls that AI generation.
+## Open-ended text and visual limits
 
-## Current published endpoint
+The complete bio is interpreted by a language model. It is not matched against
+a hand-written list of words or three fixed examples. New words, sentences,
+moods, and languages can be accepted, but model interpretations are not always
+perfect. The final illustration uses the closest supported OpenMoji subjects;
+it cannot depict every conceivable concept exactly or invent entirely new art.
 
-Edit your name and bio using **Edit profile** on GitHub, then reload your profile.
-The banner is a live SVG served by the `zaw-live-profile` Vercel project. Each
-request reads your current public profile and renders the name, exact bio text,
-and related illustration. It does not depend on GitHub Actions to detect bio
-edits. Clearing the bio displays your name. Normal words remain intact when text
-wraps. The source lives in `api/banner.py` and the renderer in `tools/`.
+The current OpenMoji library contains 4,567 icons. A main illustration plus a
+supporting icon provides combinations for compound subjects. The original case
+and spelling of the bio are preserved in the headline. Clearing the bio uses
+the current GitHub name.
 
-The endpoint sends `no-cache`, `no-store`, and `must-revalidate` headers. GitHub's
-Camo image proxy and browser caching may still delay an image briefly; an already
-open GitHub page cannot fetch a changed bio until the page/image is reloaded.
-The prior committed introduction was removed so it cannot repeat an old bio.
+Artwork is cached in `assets/bio-art.json` and reused only for the same complete
+bio and renderer version. A changed bio never reuses another bio's artwork.
+The model download is needed only for a new interpretation. Large model weights
+are temporary and are not committed or retained in an Actions cache/artifact.
+If illustration generation fails, current bio text is still published and the
+workflow reports the failure so it can be retried.
 
-The illustration follows common keywords: hi/hello gives a waving hand, bugs a
-circuit beetle, code a terminal, AI a chip, web a globe, music musical notes,
-nature a plant, gaming a controller, space a rocket, learning a book, and love
-a heart. Other text gets geometric artwork with letters from the current bio.
-This is keyword matching, not an AI image-generation service.
+## Sources
 
-Selected builds is an SVG carousel that slides to another group of up to three
-repositories every six seconds while the page is open. Every project participates,
-including forks and archived repositories; only this profile repository itself
-is excluded. New, renamed, deleted, and newly private repos are reflected on the
-next successful refresh. Descriptions come from each repo's GitHub description.
-The last slide wraps to the first projects as needed to fill three slots. Reduced
-motion settings disable sliding and leave the first slide visible. GitHub displays
-the carousel as an image, so individual cards cannot have changing clickable links.
-The **Open a repository** section below it contains correct links for every project.
-All cards have project-specific artwork: route maps, restaurant menus, parking
-bays, collaborative canvases, conveyor scanning, a code vault, education, linked
-devices, browser layouts, or release pipelines. Colors follow each project.
-Desktop uses one featured card plus two smaller cards; mobile uses three full
-width cards so the text remains readable.
+- Model: `Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF`, Apache-2.0.
+  https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF
+- The exact model revision and SHA-256 are pinned in `tools/free_visual.py`.
+- Runtime: `llama-cpp-python==0.3.36`, using its publisher's CPU wheels.
+- Graphics: OpenMoji, CC BY-SA 4.0. See `assets/ART-LICENSE.md` for attribution.
 
-The workflow refreshes repository metadata on its schedule, after generator
-changes, or manually under **Actions → Refresh profile → Run workflow**. GitHub
-can delay or skip scheduled jobs. This affects newly added projects, not the
-live bio. Changed static assets get content-hashed URLs. The carousel animates
-independently of metadata checks.
+## Project carousel
 
-The live image uses public profile HTML and requires no GitHub access token or
-AI image service. The workflow uses its built-in token to commit static assets.
-Vercel hosting is configured in `live-profile.json`, `vercel.json`, and
-`pyproject.toml`. Redeploy the Vercel project after changing the live API or its
-renderer modules. A Git push updates the README/assets but does not redeploy
-the separately hosted image service automatically.
-Metadata fetch failures fail the run and leave the published profile intact.
-GitHub may disable scheduled workflows after 60 days without repository activity;
-if that happens, enable the workflow again from the Actions tab.
+All public project repos take turns, three at a time, with a new slide every six
+seconds. Forks and archived repos participate; only the profile repository is
+excluded. Desktop uses one featured card plus two small cards. Mobile stacks
+three full-width cards. Reduced-motion preferences disable sliding.
 
-To verify locally:
+The image cannot give individual moving cards different clickable links on
+GitHub. **Open a repository** below it contains the correct project links.
+
+## Verification
 
 ```sh
 python -m unittest discover -s tools -p 'test_*.py'
-python tools/update_profile.py
+python tools/prepare_profile.py
+python tools/update_profile.py --snapshot .profile-snapshot.json
 ```
 
-Hosted example renders (without changing your actual bio):
-
-- `https://zaw-live-profile.vercel.app/api/banner?example=hello`
-- `https://zaw-live-profile.vercel.app/api/banner?example=learning`
-
-Add `&mobile=1` to preview the mobile layout. Without `example`, the endpoint
-always reads your current public profile. Upstream failures return HTTP 503
-instead of silently showing an old bio as current.
-
-For an offline preview, use `--snapshot snapshot.json`
-where the JSON contains `profile` (public user API object) and `repos` (all public
-repository API objects). Keep snapshots local. Don't run the legacy
-`generate_artwork.py` alone to refresh your profile: it regenerates the original
-static artwork. Use `update_profile.py` for profile updates.
+To generate new artwork locally, install the CPU runtime and run
+`python tools/generate_free_art.py`. It downloads about 1.1 GB of public model
+weights into the ignored `.models` directory. The workflow does this on GitHub,
+so your computer does not need to stay on.

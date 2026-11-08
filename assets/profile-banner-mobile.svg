@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="690" viewBox="0 0 600 690" role="img" aria-labelledby="title">
-<title id="title">Zaw Lwin Htoo / enjoy bugs</title>
+<title id="title">Zaw Lwin Htoo / Enjoy Learning</title>
 <defs>
 <pattern id="dot-grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#8a9885" opacity=".18" /></pattern>
 </defs>
@@ -28,16 +28,10 @@
 <circle cx="309" cy="479" r="137" fill="none" stroke="#374132" />
 <circle class="ring" cx="309" cy="479" r="116" fill="none" stroke="#c9ff59" stroke-dasharray="3 12" />
 <path d="M30 636h540" stroke="#374132" />
-<text x="30" y="668" fill="#f4f4e8" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="400">CODE. BREAK. LEARN. REPEAT.</text>
-<g id="circuit-beetle" transform="translate(309 485) scale(0.76)">
-<g fill="none" stroke="#c9ff59" stroke-width="5" stroke-linecap="square" stroke-linejoin="round">
-<path d="M-44-20-85-44h-24m65 55h-54l-14 20m71 13-36 30v25M44-20l41-24h24M44 11h54l14 20M41 44l36 30v25" />
-<path d="M-21-85-43-113v-16M21-85l22-28v-16" />
-</g>
-<g fill="#c9ff59"><circle cx="-43" cy="-134" r="6" /><circle cx="43" cy="-134" r="6" />
-<path d="M-39-62a39 32 0 0 1 78 0v24h-78z" />
-<path d="M-4-29C-75-48-77 70-4 91ZM4-29C75-48 77 70 4 91Z" />
-</g>
-<g fill="#131613"><rect class="eye" x="-21" y="-68" width="10" height="10" rx="2" /><rect class="eye" x="11" y="-68" width="10" height="10" rx="2" /></g>
-<path d="M-40-2h18v22h-16m78-22H22v22h16M-29 46h12m34 0h12" fill="none" stroke="#131613" stroke-width="4" />
-</g><text x="30" y="165.2" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="89" font-weight="900" data-bio-line="true">enjoy</text><text x="30" y="259.5" fill="#c9ff59" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="89" font-weight="900" data-bio-line="true">bugs</text></svg>
+<text x="30" y="668" fill="#f4f4e8" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="400">CREATE. EXPLORE. KEEP GOING.</text>
+<g id="bio-illustration" data-theme="study" transform="translate(309 485) scale(0.76)"><ellipse cx="0" cy="116" rx="132" ry="16" fill="#c9ff59" opacity=".08" />
+<path d="M0-47q-64-43-125-13V95q67-25 125 14 58-39 125-14V-60Q64-90 0-47Z" fill="#293925" stroke="#c9ff59" stroke-width="4" />
+<path d="M0-60q-55-38-112-16V78q59-20 112 17 53-37 112-17V-76Q55-98 0-60Z" fill="#f4f4e8" />
+<path d="M0-59V94M-85-41q31-8 60 7M-85-11q31-8 60 7M-85 19q31-8 60 7M25-34q29-15 60-7M25-4q29-15 60-7M25 26q29-15 60-7" fill="none" stroke="#657b55" stroke-width="4" stroke-linecap="round" />
+<path d="M63-88v53l13-11 13 8v-51" fill="#c9ff59" />
+<g class="bio-pulse" fill="#c9ff59"><path d="m-79-130 5 14 15 5-15 5-5 14-5-14-15-5 15-5Z" /><path d="m52-147 4 11 12 4-12 4-4 11-4-11-12-4 12-4Z" /></g></g><text x="30" y="165.4" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="88" font-weight="900" data-bio-line="true">Enjoy</text><text x="30" y="258.7" fill="#c9ff59" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="88" font-weight="900" data-bio-line="true">Learning</text></svg>

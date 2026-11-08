@@ -70,6 +70,7 @@ class ProfileTests(unittest.TestCase):
             root = Path(folder)
             assets = root / "assets"
             shutil.copytree(sync.ROOT / 'assets', assets)
+            (assets / 'bio-art.json').unlink(missing_ok=True)
             (root / "README.md").write_text((sync.ROOT / "README.md").read_text(encoding="utf-8"), encoding="utf-8")
             with patch.object(sync, 'ROOT', root), patch.object(sync.art, 'ASSETS', assets):
                 profile = {'login': sync.OWNER, 'name': 'Zaw', 'bio': 'Enjoy bugs!!!'}
@@ -109,13 +110,12 @@ class ProfileTests(unittest.TestCase):
                         if count:
                             self.assertIn('prefers-reduced-motion:reduce', path.read_text(encoding='utf-8'))
 
-    def test_live_readme_does_not_embed_a_stale_bio_or_depend_on_bio_commits(self):
+    def test_profile_is_self_contained_and_bio_edits_change_image_urls(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             assets = root / 'assets'
             shutil.copytree(sync.ROOT / 'assets', assets)
             (root / 'README.md').write_text((sync.ROOT / 'README.md').read_text(encoding='utf-8'), encoding='utf-8')
-            (root / 'live-profile.json').write_text('{"banner_url":"https://example.com/api/banner"}')
             with patch.object(sync, 'ROOT', root), patch.object(sync.art, 'ASSETS', assets):
                 profile = {'login': sync.OWNER, 'name': 'Zaw', 'bio': 'hi'}
                 sync.generate(profile, [repo('project')])
@@ -123,9 +123,10 @@ class ProfileTests(unittest.TestCase):
                 profile['bio'] = 'Enjoy learning'
                 sync.generate(profile, [repo('project')])
                 second = (root / 'README.md').read_text(encoding='utf-8')
-                self.assertEqual(first, second)
-                self.assertIn('https://example.com/api/banner?v=4', first)
-                self.assertNotIn('Enjoy learning', second)
+                self.assertNotEqual(first, second)
+                self.assertIn('assets/profile-banner.svg?v=', first)
+                self.assertIn('Enjoy learning', second)
+                self.assertNotIn('vercel.app', first)
 
 
 if __name__ == "__main__":
