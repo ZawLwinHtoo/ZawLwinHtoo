@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="820" viewBox="0 0 600 820" role="img" aria-labelledby="title">
+<title id="title">Rotating projects / three cards / new slide every six seconds</title>
+<defs><clipPath id="carousel-window"><rect width="600" height="820" rx="18"/></clipPath></defs>
+<style>
+.carousel-track{animation:project-slide 30s linear infinite}
+@keyframes project-slide{0.000000%,18.333333%{transform:translateX(-0px)}20.000000%,38.333333%{transform:translateX(-600px)}40.000000%,58.333333%{transform:translateX(-1200px)}60.000000%,78.333333%{transform:translateX(-1800px)}80.000000%,98.333333%{transform:translateX(-2400px)}100%{transform:translateX(-3000px)}}
+.carousel-progress{animation:project-progress 6s linear infinite;transform-origin:0 0}
+@keyframes project-progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){.carousel-track,.carousel-progress{animation:none}}
+</style>
+<rect width="600" height="820" rx="18" fill="#131613"/>
+<g clip-path="url(#carousel-window)"><g class="carousel-track"><g class="carousel-panel" transform="translate(0 0)"><svg xmlns="http://www.w3.org/2000/svg" width="600" height="550" viewBox="0 0 600 550" role="img" aria-labelledby="title-p0-s0" x="0" y="0" data-repository="lannpya-ai">
+<title id="title-p0-s0">LannPya AI / Delivery tooling for Myanmar</title>
+<rect width="600" height="550" rx="18" fill="#192218" />
+<text x="30" y="46" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">01 / LOGISTICS</text>
+<text x="30" y="120" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="64" font-weight="900" letter-spacing="-3">LannPya AI.</text>
+<text x="32" y="160" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400">LOCAL CONTEXT. PRACTICAL TOOLS.</text>
+<g transform="translate(30 192) scale(1.15)">
+<rect width="470" height="228" rx="12" fill="#1d291e" stroke="#405437" />
+<g stroke="#354431" stroke-width="15"><path d="M0 54h470M0 174h470M64 0v228M259 0v228M405 0v228" /></g>
+<g stroke="#283724" stroke-width="1"><path d="M0 54h470M0 174h470M64 0v228M259 0v228M405 0v228" /></g>
+<path d="M64 174h195V54h146" fill="none" stroke="#c9ff59" stroke-width="5" stroke-linejoin="round" />
+<circle cx="64" cy="174" r="13" fill="#c9ff59" /><circle cx="64" cy="174" r="5" fill="#131613" />
+<circle cx="405" cy="54" r="13" fill="#c9ff59" /><circle cx="405" cy="54" r="5" fill="#131613" />
+<rect x="238" y="109" width="42" height="35" rx="7" fill="#f4f4e8" stroke="#131613" stroke-width="3" />
+<path d="m250 131 9-10 9 10" fill="none" stroke="#131613" stroke-width="3" />
+<rect x="94" y="145" width="105" height="28" rx="5" fill="#131613" />
+<text x="104" y="164" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="14" font-weight="400">DISPATCH</text>
+<rect x="326" y="86" width="112" height="28" rx="5" fill="#131613" />
+<text x="337" y="105" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="14" font-weight="400">DELIVERY</text></g>
+<text x="32" y="509" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">PYTHON / FASTAPI</text>
+<text x="480" y="511" fill="#c9ff59" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="36" font-weight="400">↗</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="290" height="180" viewBox="0 0 580 360" role="img" aria-labelledby="title-p0-s1" x="0" y="570" data-repository="menu-maker">
+<title id="title-p0-s1">Menu Maker / Create and manage menus</title>
+<rect width="580" height="360" rx="16" fill="#29201b" />
+<text x="26" y="42" fill="#ffb184" font-family="Consolas, 'Liberation Mono', monospace" font-size="19" font-weight="400">02 / WEB APP</text>
+<text x="24" y="121" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="63" font-weight="900" letter-spacing="-3">Menu</text>
+<text x="24" y="184" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="63" font-weight="900" letter-spacing="-3">Maker.</text>
+<g transform="translate(359 96) rotate(9)">
+<rect width="160" height="195" rx="9" fill="#fbdfc6" />
+<rect x="17" y="18" width="37" height="6" rx="2" fill="#a74420" />
+<text x="17" y="61" fill="#3d261c" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="22" font-weight="900">MENU</text>
+<g stroke="#b47d56" stroke-width="4" stroke-linecap="round"><path d="M19 87h70m20 0h30M19 111h85m16 0h19M19 135h61m25 0h34M19 159h78m20 0h22" /></g></g>
+<circle cx="488" cy="262" r="37" fill="#ff9d66" />
+<path d="M472 262h30m-11-11 11 11-11 11" fill="none" stroke="#3d261c" stroke-width="4" />
+<text x="26" y="323" fill="#ffb184" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">CREATE / ORGANIZE</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="290" height="180" viewBox="0 0 580 360" role="img" aria-labelledby="title-p0-s2" x="310" y="570" data-repository="parking-management-system">
+<title id="title-p0-s2">Parking Management / User and admin tools</title>
+<rect width="580" height="360" rx="16" fill="#172532" />
+<text x="26" y="42" fill="#89d5ff" font-family="Consolas, 'Liberation Mono', monospace" font-size="19" font-weight="400">03 / MANAGEMENT</text>
+<text x="24" y="121" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="63" font-weight="900" letter-spacing="-3">Parking</text>
+<text x="26" y="169" fill="#89d5ff" font-family="Consolas, 'Liberation Mono', monospace" font-size="25" font-weight="700">MANAGEMENT</text>
+<g transform="translate(304 198)">
+<path d="M0 0h234M0 89h234M0 0v89M78 0v89M156 0v89M234 0v89" fill="none" stroke="#3d6076" stroke-width="3" />
+<rect x="91" y="11" width="52" height="69" rx="11" fill="#89d5ff" />
+<rect x="100" y="25" width="34" height="20" rx="5" fill="#203c50" />
+<rect x="100" y="57" width="34" height="10" rx="3" fill="#203c50" />
+<path d="M20 45h37m-12-12 12 12-12 12" fill="none" stroke="#89d5ff" stroke-width="4" />
+</g>
+<text x="26" y="324" fill="#89d5ff" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">USER / ADMIN</text>
+</svg><text x="18" y="797" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400" >01 / 05   NEXT PROJECTS IN 6s</text><rect class="carousel-progress" x="0" y="815" width="600" height="3" fill="#c9ff59"/></g><g class="carousel-panel" transform="translate(600 0)"><svg xmlns="http://www.w3.org/2000/svg" width="600" height="550" viewBox="0 0 600 550" role="img" aria-labelledby="title-p1-s0" x="0" y="0" data-repository="Backup-Programs">
+<title id="title-p1-s0">Backup Programs / C</title>
+<rect width="600" height="550" rx="18" fill="#192218" /><text x="30" y="44" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">01 / C</text><text x="28" y="108.0" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="68" font-weight="900">Backup</text><text x="28" y="180.07999999999998" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="68" font-weight="900">Programs</text><g transform="translate(280 302) scale(0.75)">
+<rect width="320" height="196" rx="12" fill="#131613" stroke="#c9ff59" stroke-opacity=".4" />
+<path d="M0 34h320" stroke="#c9ff59" stroke-opacity=".25" />
+<g fill="#c9ff59"><circle cx="18" cy="17" r="4" /><circle cx="34" cy="17" r="4" /><circle cx="50" cy="17" r="4" /></g>
+<path d="m34 78 24 22-24 22m47 0h45M34 155h112m18 0h56" fill="none" stroke="#c9ff59" stroke-width="6" />
+</g><text x="30" y="520" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400">OPEN REPOSITORY</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="290" height="180" viewBox="0 0 580 360" role="img" aria-labelledby="title-p1-s1" x="0" y="570" data-repository="colladraw">
+<title id="title-p1-s1">colladraw / JavaScript</title>
+<rect width="580" height="360" rx="18" fill="#29201b" /><text x="30" y="44" fill="#ffb184" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">02 / JAVASCRIPT</text><text x="28" y="108.0" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="59" font-weight="900">colladraw</text><g transform="translate(349 202) scale(0.65)">
+<rect width="320" height="196" rx="12" fill="#131613" stroke="#ffb184" stroke-opacity=".4" />
+<path d="M0 34h320" stroke="#ffb184" stroke-opacity=".25" />
+<g fill="#ffb184"><circle cx="18" cy="17" r="4" /><circle cx="34" cy="17" r="4" /><circle cx="50" cy="17" r="4" /></g>
+<path d="m34 78 24 22-24 22m47 0h45M34 155h112m18 0h56" fill="none" stroke="#ffb184" stroke-width="6" />
+</g><text x="30" y="330" fill="#ffb184" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400">OPEN REPOSITORY</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="290" height="180" viewBox="0 0 580 360" role="img" aria-labelledby="title-p1-s2" x="310" y="570" data-repository="conveyor_edge_ai">
+<title id="title-p1-s2">conveyor edge ai / Python</title>
+<rect width="580" height="360" rx="18" fill="#172532" /><text x="30" y="44" fill="#89d5ff" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">03 / PYTHON</text><text x="28" y="108.0" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="59" font-weight="900">conveyor</text><text x="28" y="170.54000000000002" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="59" font-weight="900">edge ai</text><g transform="translate(349 202) scale(0.65)">
+<rect width="320" height="196" rx="12" fill="#131613" stroke="#89d5ff" stroke-opacity=".4" />
+<path d="M0 34h320" stroke="#89d5ff" stroke-opacity=".25" />
+<g fill="#89d5ff"><circle cx="18" cy="17" r="4" /><circle cx="34" cy="17" r="4" /><circle cx="50" cy="17" r="4" /></g>
+<path d="m34 78 24 22-24 22m47 0h45M34 155h112m18 0h56" fill="none" stroke="#89d5ff" stroke-width="6" />
+</g><text x="30" y="330" fill="#89d5ff" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400">OPEN REPOSITORY</text>
+</svg><text x="18" y="797" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400" >02 / 05   NEXT PROJECTS IN 6s</text><rect class="carousel-progress" x="0" y="815" width="600" height="3" fill="#c9ff59"/></g><g class="carousel-panel" transform="translate(1200 0)"><svg xmlns="http://www.w3.org/2000/svg" width="600" height="550" viewBox="0 0 600 550" role="img" aria-labelledby="title-p2-s0" x="0" y="0" data-repository="distributed-whiteboard">
+<title id="title-p2-s0">distributed whiteboard / JavaScript</title>
+<rect width="600" height="550" rx="18" fill="#192218" /><text x="30" y="44" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">01 / JAVASCRIPT</text><text x="28" y="108.0" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="58" font-weight="900">distributed</text><text x="28" y="169.48000000000002" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="58" font-weight="900">whiteboard</text><g transform="translate(280 302) scale(0.75)">
+<rect width="320" height="196" rx="12" fill="#131613" stroke="#c9ff59" stroke-opacity=".4" />
+<path d="M0 34h320" stroke="#c9ff59" stroke-opacity=".25" />
+<g fill="#c9ff59"><circle cx="18" cy="17" r="4" /><circle cx="34" cy="17" r="4" /><circle cx="50" cy="17" r="4" /></g>
+<path d="m34 78 24 22-24 22m47 0h45M34 155h112m18 0h56" fill="none" stroke="#c9ff59" stroke-width="6" />
+</g><text x="30" y="520" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400">OPEN REPOSITORY</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="290" height="180" viewBox="0 0 580 360" role="img" aria-labelledby="title-p2-s1" x="0" y="570" data-repository="NCC-">
+<title id="title-p2-s1">NCC / C++</title>
+<rect width="580" height="360" rx="18" fill="#29201b" /><text x="30" y="44" fill="#ffb184" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">02 / C++</text><text x="28" y="108.0" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="59" font-weight="900">NCC</text><g transform="translate(349 202) scale(0.65)">
+<rect width="320" height="196" rx="12" fill="#131613" stroke="#ffb184" stroke-opacity=".4" />
+<path d="M0 34h320" stroke="#ffb184" stroke-opacity=".25" />
+<g fill="#ffb184"><circle cx="18" cy="17" r="4" /><circle cx="34" cy="17" r="4" /><circle cx="50" cy="17" r="4" /></g>
+<path d="m34 78 24 22-24 22m47 0h45M34 155h112m18 0h56" fill="none" stroke="#ffb184" stroke-width="6" />
+</g><text x="30" y="330" fill="#ffb184" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400">OPEN REPOSITORY</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="290" height="180" viewBox="0 0 580 360" role="img" aria-labelledby="title-p2-s2" x="310" y="570" data-repository="rescura-sync">
+<title id="title-p2-s2">rescura sync / Python</title>
+<rect width="580" height="360" rx="18" fill="#172532" /><text x="30" y="44" fill="#89d5ff" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">03 / PYTHON</text><text x="28" y="108.0" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="59" font-weight="900">rescura</text><text x="28" y="170.54000000000002" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="59" font-weight="900">sync</text><g transform="translate(349 202) scale(0.65)">
+<rect width="320" height="196" rx="12" fill="#131613" stroke="#89d5ff" stroke-opacity=".4" />
+<path d="M0 34h320" stroke="#89d5ff" stroke-opacity=".25" />
+<g fill="#89d5ff"><circle cx="18" cy="17" r="4" /><circle cx="34" cy="17" r="4" /><circle cx="50" cy="17" r="4" /></g>
+<path d="m34 78 24 22-24 22m47 0h45M34 155h112m18 0h56" fill="none" stroke="#89d5ff" stroke-width="6" />
+</g><text x="30" y="330" fill="#89d5ff" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400">OPEN REPOSITORY</text>
+</svg><text x="18" y="797" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400" >03 / 05   NEXT PROJECTS IN 6s</text><rect class="carousel-progress" x="0" y="815" width="600" height="3" fill="#c9ff59"/></g><g class="carousel-panel" transform="translate(1800 0)"><svg xmlns="http://www.w3.org/2000/svg" width="600" height="550" viewBox="0 0 600 550" role="img" aria-labelledby="title-p3-s0" x="0" y="0" data-repository="sce-release-management">
+<title id="title-p3-s0">sce release management / JavaScript</title>
+<rect width="600" height="550" rx="18" fill="#192218" /><text x="30" y="44" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">01 / JAVASCRIPT</text><text x="28" y="108.0" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="58" font-weight="900">sce release</text><text x="28" y="169.48000000000002" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="58" font-weight="900">management</text><g transform="translate(280 302) scale(0.75)">
+<rect width="320" height="196" rx="12" fill="#131613" stroke="#c9ff59" stroke-opacity=".4" />
+<path d="M0 34h320" stroke="#c9ff59" stroke-opacity=".25" />
+<g fill="#c9ff59"><circle cx="18" cy="17" r="4" /><circle cx="34" cy="17" r="4" /><circle cx="50" cy="17" r="4" /></g>
+<path d="m34 78 24 22-24 22m47 0h45M34 155h112m18 0h56" fill="none" stroke="#c9ff59" stroke-width="6" />
+</g><text x="30" y="520" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400">OPEN REPOSITORY</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="290" height="180" viewBox="0 0 580 360" role="img" aria-labelledby="title-p3-s1" x="0" y="570" data-repository="SEM2-Web-Pj-">
+<title id="title-p3-s1">SEM2 Web Pj / CSS</title>
+<rect width="580" height="360" rx="18" fill="#29201b" /><text x="30" y="44" fill="#ffb184" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">02 / CSS</text><text x="28" y="108.0" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="59" font-weight="900">SEM2 Web</text><text x="28" y="170.54000000000002" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="59" font-weight="900">Pj</text><g transform="translate(349 202) scale(0.65)">
+<rect width="320" height="196" rx="12" fill="#131613" stroke="#ffb184" stroke-opacity=".4" />
+<path d="M0 34h320" stroke="#ffb184" stroke-opacity=".25" />
+<g fill="#ffb184"><circle cx="18" cy="17" r="4" /><circle cx="34" cy="17" r="4" /><circle cx="50" cy="17" r="4" /></g>
+<path d="m34 78 24 22-24 22m47 0h45M34 155h112m18 0h56" fill="none" stroke="#ffb184" stroke-width="6" />
+</g><text x="30" y="330" fill="#ffb184" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400">OPEN REPOSITORY</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="290" height="180" viewBox="0 0 580 360" role="img" aria-labelledby="title-p3-s2" x="310" y="570" data-repository="Sem7_CPP_Project">
+<title id="title-p3-s2">Sem7 CPP Project / C++</title>
+<rect width="580" height="360" rx="18" fill="#172532" /><text x="30" y="44" fill="#89d5ff" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">03 / C++</text><text x="28" y="108.0" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="59" font-weight="900">Sem7 CPP</text><text x="28" y="170.54000000000002" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="59" font-weight="900">Project</text><g transform="translate(349 202) scale(0.65)">
+<rect width="320" height="196" rx="12" fill="#131613" stroke="#89d5ff" stroke-opacity=".4" />
+<path d="M0 34h320" stroke="#89d5ff" stroke-opacity=".25" />
+<g fill="#89d5ff"><circle cx="18" cy="17" r="4" /><circle cx="34" cy="17" r="4" /><circle cx="50" cy="17" r="4" /></g>
+<path d="m34 78 24 22-24 22m47 0h45M34 155h112m18 0h56" fill="none" stroke="#89d5ff" stroke-width="6" />
+</g><text x="30" y="330" fill="#89d5ff" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400">OPEN REPOSITORY</text>
+</svg><text x="18" y="797" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400" >04 / 05   NEXT PROJECTS IN 6s</text><rect class="carousel-progress" x="0" y="815" width="600" height="3" fill="#c9ff59"/></g><g class="carousel-panel" transform="translate(2400 0)"><svg xmlns="http://www.w3.org/2000/svg" width="600" height="550" viewBox="0 0 600 550" role="img" aria-labelledby="title-p4-s0" x="0" y="0" data-repository="swot">
+<title id="title-p4-s0">swot / FORK</title>
+<rect width="600" height="550" rx="18" fill="#192218" /><text x="30" y="44" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">01 / FORK</text><text x="28" y="108.0" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="70" font-weight="900">swot</text><g transform="translate(280 302) scale(0.75)">
+<rect width="320" height="196" rx="12" fill="#131613" stroke="#c9ff59" stroke-opacity=".4" />
+<path d="M0 34h320" stroke="#c9ff59" stroke-opacity=".25" />
+<g fill="#c9ff59"><circle cx="18" cy="17" r="4" /><circle cx="34" cy="17" r="4" /><circle cx="50" cy="17" r="4" /></g>
+<path d="m34 78 24 22-24 22m47 0h45M34 155h112m18 0h56" fill="none" stroke="#c9ff59" stroke-width="6" />
+</g><text x="30" y="520" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400">FORK / OPEN REPOSITORY</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="290" height="180" viewBox="0 0 1200 340" role="img" aria-labelledby="title-p4-s1" x="0" y="570" data-repository="lannpya-ai">
+<title id="title-p4-s1">LannPya AI / Delivery tooling for Myanmar</title>
+<rect width="1200" height="340" rx="18" fill="#192218" />
+<text x="40" y="47" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">01 / LOGISTICS</text>
+<text x="38" y="143" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="75" font-weight="900" letter-spacing="-4">LannPya AI.</text>
+<text x="42" y="189" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">LOCAL CONTEXT. PRACTICAL TOOLS.</text>
+<rect x="40" y="248" width="238" height="42" rx="7" fill="#293724" />
+<text x="56" y="275" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">PYTHON / FASTAPI</text>
+<g transform="translate(637 55) scale(1.04)">
+<rect width="470" height="228" rx="12" fill="#1d291e" stroke="#405437" />
+<g stroke="#354431" stroke-width="15"><path d="M0 54h470M0 174h470M64 0v228M259 0v228M405 0v228" /></g>
+<g stroke="#283724" stroke-width="1"><path d="M0 54h470M0 174h470M64 0v228M259 0v228M405 0v228" /></g>
+<path d="M64 174h195V54h146" fill="none" stroke="#c9ff59" stroke-width="5" stroke-linejoin="round" />
+<circle cx="64" cy="174" r="13" fill="#c9ff59" /><circle cx="64" cy="174" r="5" fill="#131613" />
+<circle cx="405" cy="54" r="13" fill="#c9ff59" /><circle cx="405" cy="54" r="5" fill="#131613" />
+<rect x="238" y="109" width="42" height="35" rx="7" fill="#f4f4e8" stroke="#131613" stroke-width="3" />
+<path d="m250 131 9-10 9 10" fill="none" stroke="#131613" stroke-width="3" />
+<rect x="94" y="145" width="105" height="28" rx="5" fill="#131613" />
+<text x="104" y="164" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="14" font-weight="400">DISPATCH</text>
+<rect x="326" y="86" width="112" height="28" rx="5" fill="#131613" />
+<text x="337" y="105" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="14" font-weight="400">DELIVERY</text></g>
+<text x="1127" y="310" fill="#c9ff59" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="36" font-weight="400">↗</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="290" height="180" viewBox="0 0 580 360" role="img" aria-labelledby="title-p4-s2" x="310" y="570" data-repository="menu-maker">
+<title id="title-p4-s2">Menu Maker / Create and manage menus</title>
+<rect width="580" height="360" rx="16" fill="#29201b" />
+<text x="26" y="42" fill="#ffb184" font-family="Consolas, 'Liberation Mono', monospace" font-size="19" font-weight="400">02 / WEB APP</text>
+<text x="24" y="121" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="63" font-weight="900" letter-spacing="-3">Menu</text>
+<text x="24" y="184" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="63" font-weight="900" letter-spacing="-3">Maker.</text>
+<g transform="translate(359 96) rotate(9)">
+<rect width="160" height="195" rx="9" fill="#fbdfc6" />
+<rect x="17" y="18" width="37" height="6" rx="2" fill="#a74420" />
+<text x="17" y="61" fill="#3d261c" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="22" font-weight="900">MENU</text>
+<g stroke="#b47d56" stroke-width="4" stroke-linecap="round"><path d="M19 87h70m20 0h30M19 111h85m16 0h19M19 135h61m25 0h34M19 159h78m20 0h22" /></g></g>
+<circle cx="488" cy="262" r="37" fill="#ff9d66" />
+<path d="M472 262h30m-11-11 11 11-11 11" fill="none" stroke="#3d261c" stroke-width="4" />
+<text x="26" y="323" fill="#ffb184" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">CREATE / ORGANIZE</text>
+</svg><text x="18" y="797" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400" >05 / 05   NEXT PROJECTS IN 6s</text><rect class="carousel-progress" x="0" y="815" width="600" height="3" fill="#c9ff59"/></g><g class="carousel-panel" transform="translate(3000 0)"><svg xmlns="http://www.w3.org/2000/svg" width="600" height="550" viewBox="0 0 600 550" role="img" aria-labelledby="title-p0-s0-loop" x="0" y="0" data-repository="lannpya-ai">
+<title id="title-p0-s0-loop">LannPya AI / Delivery tooling for Myanmar</title>
+<rect width="600" height="550" rx="18" fill="#192218" />
+<text x="30" y="46" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">01 / LOGISTICS</text>
+<text x="30" y="120" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="64" font-weight="900" letter-spacing="-3">LannPya AI.</text>
+<text x="32" y="160" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400">LOCAL CONTEXT. PRACTICAL TOOLS.</text>
+<g transform="translate(30 192) scale(1.15)">
+<rect width="470" height="228" rx="12" fill="#1d291e" stroke="#405437" />
+<g stroke="#354431" stroke-width="15"><path d="M0 54h470M0 174h470M64 0v228M259 0v228M405 0v228" /></g>
+<g stroke="#283724" stroke-width="1"><path d="M0 54h470M0 174h470M64 0v228M259 0v228M405 0v228" /></g>
+<path d="M64 174h195V54h146" fill="none" stroke="#c9ff59" stroke-width="5" stroke-linejoin="round" />
+<circle cx="64" cy="174" r="13" fill="#c9ff59" /><circle cx="64" cy="174" r="5" fill="#131613" />
+<circle cx="405" cy="54" r="13" fill="#c9ff59" /><circle cx="405" cy="54" r="5" fill="#131613" />
+<rect x="238" y="109" width="42" height="35" rx="7" fill="#f4f4e8" stroke="#131613" stroke-width="3" />
+<path d="m250 131 9-10 9 10" fill="none" stroke="#131613" stroke-width="3" />
+<rect x="94" y="145" width="105" height="28" rx="5" fill="#131613" />
+<text x="104" y="164" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="14" font-weight="400">DISPATCH</text>
+<rect x="326" y="86" width="112" height="28" rx="5" fill="#131613" />
+<text x="337" y="105" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="14" font-weight="400">DELIVERY</text></g>
+<text x="32" y="509" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">PYTHON / FASTAPI</text>
+<text x="480" y="511" fill="#c9ff59" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="36" font-weight="400">↗</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="290" height="180" viewBox="0 0 580 360" role="img" aria-labelledby="title-p0-s1-loop" x="0" y="570" data-repository="menu-maker">
+<title id="title-p0-s1-loop">Menu Maker / Create and manage menus</title>
+<rect width="580" height="360" rx="16" fill="#29201b" />
+<text x="26" y="42" fill="#ffb184" font-family="Consolas, 'Liberation Mono', monospace" font-size="19" font-weight="400">02 / WEB APP</text>
+<text x="24" y="121" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="63" font-weight="900" letter-spacing="-3">Menu</text>
+<text x="24" y="184" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="63" font-weight="900" letter-spacing="-3">Maker.</text>
+<g transform="translate(359 96) rotate(9)">
+<rect width="160" height="195" rx="9" fill="#fbdfc6" />
+<rect x="17" y="18" width="37" height="6" rx="2" fill="#a74420" />
+<text x="17" y="61" fill="#3d261c" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="22" font-weight="900">MENU</text>
+<g stroke="#b47d56" stroke-width="4" stroke-linecap="round"><path d="M19 87h70m20 0h30M19 111h85m16 0h19M19 135h61m25 0h34M19 159h78m20 0h22" /></g></g>
+<circle cx="488" cy="262" r="37" fill="#ff9d66" />
+<path d="M472 262h30m-11-11 11 11-11 11" fill="none" stroke="#3d261c" stroke-width="4" />
+<text x="26" y="323" fill="#ffb184" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">CREATE / ORGANIZE</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="290" height="180" viewBox="0 0 580 360" role="img" aria-labelledby="title-p0-s2-loop" x="310" y="570" data-repository="parking-management-system">
+<title id="title-p0-s2-loop">Parking Management / User and admin tools</title>
+<rect width="580" height="360" rx="16" fill="#172532" />
+<text x="26" y="42" fill="#89d5ff" font-family="Consolas, 'Liberation Mono', monospace" font-size="19" font-weight="400">03 / MANAGEMENT</text>
+<text x="24" y="121" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="63" font-weight="900" letter-spacing="-3">Parking</text>
+<text x="26" y="169" fill="#89d5ff" font-family="Consolas, 'Liberation Mono', monospace" font-size="25" font-weight="700">MANAGEMENT</text>
+<g transform="translate(304 198)">
+<path d="M0 0h234M0 89h234M0 0v89M78 0v89M156 0v89M234 0v89" fill="none" stroke="#3d6076" stroke-width="3" />
+<rect x="91" y="11" width="52" height="69" rx="11" fill="#89d5ff" />
+<rect x="100" y="25" width="34" height="20" rx="5" fill="#203c50" />
+<rect x="100" y="57" width="34" height="10" rx="3" fill="#203c50" />
+<path d="M20 45h37m-12-12 12 12-12 12" fill="none" stroke="#89d5ff" stroke-width="4" />
+</g>
+<text x="26" y="324" fill="#89d5ff" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400">USER / ADMIN</text>
+</svg><text x="18" y="797" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400" >01 / 05   NEXT PROJECTS IN 6s</text><rect class="carousel-progress" x="0" y="815" width="600" height="3" fill="#c9ff59"/></g></g></g>
+</svg>

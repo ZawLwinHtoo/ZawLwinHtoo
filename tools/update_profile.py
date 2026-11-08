@@ -1,7 +1,7 @@
 """Sync public GitHub metadata into the profile. Python standard library only."""
 import argparse
-from datetime import datetime, timezone
 from html import escape
+from hashlib import sha256
 import json
 import os
 from pathlib import Path
@@ -13,10 +13,10 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 import generate_artwork as art
+import profile_motion as motion
 
 ROOT = Path(__file__).resolve().parents[1]
 OWNER = "ZawLwinHtoo"
-INTERVAL = 30 * 60
 PRIORITY = {"lannpya-ai": 0, "menu-maker": 1, "parking-management-system": 2}
 NS = {"s": "http://www.w3.org/2000/svg"}
 
@@ -62,13 +62,6 @@ def public_projects(repos, owner):
                   key=lambda r: (PRIORITY.get(r["name"], 3), r["name"].casefold()))
 
 
-def select_projects(repos, now):
-    if not repos:
-        return []
-    offset = (int(now.timestamp()) // INTERVAL * 3) % len(repos)
-    return [repos[(offset + i) % len(repos)] for i in range(min(3, len(repos)))]
-
-
 def wrapped(value, width):
     return textwrap.wrap(clean(value), width=width, break_long_words=True,
                          break_on_hyphens=False, replace_whitespace=True)
@@ -83,21 +76,38 @@ def fit_lines(value, width, height, largest=134, smallest=18):
 
 
 def banner(profile, mobile=False):
-    # Keep the original circuit artwork, replacing all identity/headline text.
+    # Retain the layout, but match both the headline and illustration to the bio.
     art.hero(mobile=mobile)
     filename = "profile-banner-mobile.svg" if mobile else "profile-banner.svg"
     tree = ET.parse(art.ASSETS / filename)
     root = tree.getroot()
     name = clean(profile.get("name")) or profile["login"]
     bio = clean(profile.get("bio"))
+    theme, illustration = motion.bio_figure(bio or name, 309 if mobile else 884,
+                                          485 if mobile else 245, .76 if mobile else .95)
     root.find("s:title", NS).text = name + (" / " + bio if bio else "")
     identity = root.find(".//s:g[@id='identity']/s:text", NS)
     identity.text = name.upper()
     identity.set("font-size", str(min(20, 440 / max(1, len(name) * .65))))
     for parent in root.iter():
         for node in list(parent):
+            if node.get("id") == "circuit-beetle":
+                parent.remove(node)
             if node.tag == "{" + NS["s"] + "}text" and clean(node.text) in ("ENJOY", "BUGS."):
                 parent.remove(node)
+    figure = ET.fromstring(illustration)
+    for node in figure.iter():
+        node.tag = "{" + NS["s"] + "}" + node.tag
+    root.append(figure)
+    root.find("s:style", NS).text += '''
+.bio-wave{animation:hello-wave 2.4s ease-in-out infinite;transform-origin:0px 55px}
+@keyframes hello-wave{0%,60%,100%{transform:rotate(0deg)}15%,35%{transform:rotate(13deg)}25%,45%{transform:rotate(-10deg)}}
+.bio-cursor{animation:cursor-blink 1s step-end infinite}
+@keyframes cursor-blink{50%{opacity:0}}
+.bio-pulse{animation:bio-pulse 3s ease-in-out infinite;transform-origin:0 0}
+@keyframes bio-pulse{0%,100%{opacity:.65}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.bio-wave,.bio-cursor,.bio-pulse{animation:none}}
+'''
     x, top, width, height = (30, 88, 540, 190) if mobile else (44, 95, 560, 265)
     # An empty bio displays the current name rather than an outdated slogan.
     lines, size = fit_lines((bio or name).upper(), width, height, 112 if mobile else 134)
@@ -112,6 +122,10 @@ def banner(profile, mobile=False):
             node.text = "@" + profile["login"]
         elif clean(node.text) == "CURIOUS BY DEFAULT":
             node.text = "GITHUB / PROFILE"
+        elif clean(node.text) == "BUG / 001":
+            node.text = theme.upper() + " / 001"
+        elif theme != "bugs" and clean(node.text) == "CODE. BREAK. LEARN. REPEAT.":
+            node.text = "SAY HELLO. KEEP EXPLORING." if theme == "hello" else "CREATE. EXPLORE. KEEP GOING."
     ET.register_namespace("", NS["s"])
     tree.write(art.ASSETS / filename, encoding="unicode", xml_declaration=False)
 
@@ -164,25 +178,10 @@ def description(repo):
     return clean(repo.get("description")) or ("A forked repository." if repo.get("fork") else "Explore the code and project files.")
 
 
-def build_markup(repo, slot):
-    url = f'https://github.com/{repo["owner"]["login"]}/{repo["name"]}'
-    title = escape(project_title(repo))
-    card = project_card(repo, slot)
-    if slot == 0:
-        mobile = project_card(repo, slot, mobile=True)
-        image = (f'<picture>\n  <source media="(max-width: 600px)" srcset="assets/{mobile}">\n'
-                 f'  <img src="assets/{card}" alt="{title}. Open the repository." width="100%">\n</picture>')
-    else:
-        image = f'<img src="assets/{card}" alt="{title}. Open the repository." width="100%">'
-    return (f'<a href="{url}">\n{image}\n</a>\n\n<p><b>{title}</b><br>\n'
-            f'{escape(description(repo))}</p>\n\n<p><a href="{url}">Explore the project →</a></p>')
-
-
-def generate(profile, repos, now):
+def generate(profile, repos):
     if profile.get("login", "").casefold() != OWNER.casefold():
         raise ValueError("Refusing to generate a different user's profile")
     projects = public_projects(repos, profile["login"])
-    selected = select_projects(projects, now)
     art.ASSETS.mkdir(exist_ok=True)
     banner(profile)
     banner(profile, mobile=True)
@@ -198,35 +197,47 @@ def generate(profile, repos, now):
         introduction += f'<br>\n  {bio}'
     introduction += '\n</p>'
     readme = re.sub(r'<p align="center">.*?</p>', lambda _: introduction, readme, count=1, flags=re.S)
-    blocks = [build_markup(repo, i) for i, repo in enumerate(selected)]
+    motion.carousel(projects, project_card)
+    motion.carousel(projects, project_card, mobile=True)
     builds = "## Selected builds\n\n"
-    builds += (f'Three at a time, rotating through {len(projects)} public repositories. '
-               'Refreshes automatically about every 30 minutes.\n\n')
-    if blocks:
-        builds += blocks[0] + "\n\n"
-        if len(blocks) > 1:
-            builds += '<table>\n<tr>\n' + '\n'.join(
-                f'<td width="50%" valign="top">\n\n{block}\n\n</td>' for block in blocks[1:])
-            builds += '\n</tr>\n</table>\n\n'
+    builds += (f'Three at a time. All {len(projects)} public projects. A new slide every six seconds.\n\n')
+    if projects:
+        builds += '''<picture>
+  <source media="(max-width: 600px)" srcset="assets/build-carousel-mobile.svg">
+  <img src="assets/build-carousel.svg" alt="Animated project showcase. Three cards slide to the next projects every six seconds. Repository links are below." width="100%">
+</picture>
+
+<details>
+<summary>Open a repository</summary>
+
+'''
+        for repo in projects:
+            url = f'https://github.com/{profile["login"]}/{repo["name"]}'
+            builds += f'<p><a href="{url}"><b>{escape(project_title(repo))}</b></a> — {escape(description(repo))}</p>\n\n'
+        builds += '</details>\n\n'
     else:
         builds += "New builds will appear here when a public repository is available.\n\n"
     readme = re.sub(r'## Selected builds\n.*?(?=## The toolbox)', lambda _: builds + '<br>\n\n', readme, flags=re.S)
+    # A changed image receives a new URL so GitHub/browser caches fetch its new content.
+    def versioned(match):
+        asset = art.ASSETS / match.group(2)
+        version = sha256(asset.read_bytes()).hexdigest()[:12]
+        return f'{match.group(1)}="assets/{match.group(2)}?v={version}"'
+    readme = re.sub(r'(src|srcset)="assets/([^"?]+\.svg)(?:\?[^\"]*)?"', versioned, readme)
     (ROOT / "README.md").write_text(readme, encoding="utf-8", newline="\n")
     for asset in art.ASSETS.glob("*.svg"):
         ET.parse(asset)
-    print(f"Synced {profile['login']}: {len(projects)} public projects; showing "
-          + ", ".join(r["name"] for r in selected))
+    print(f"Synced {profile['login']}: bio theme={motion.bio_theme(clean(profile.get('bio')))}; "
+          f"{len(projects)} projects in six-second animated slides")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--snapshot", type=Path, help="Use a local metadata snapshot for offline verification")
-    parser.add_argument("--at", help="ISO UTC timestamp to preview another rotation")
     args = parser.parse_args()
-    now = datetime.fromisoformat(args.at.replace("Z", "+00:00")) if args.at else datetime.now(timezone.utc)
     if args.snapshot:
         data = json.loads(args.snapshot.read_text(encoding="utf-8"))
         profile, repos = data["profile"], data["repos"]
     else:
         profile, repos = fetch_metadata(OWNER)
-    generate(profile, repos, now)
+    generate(profile, repos)

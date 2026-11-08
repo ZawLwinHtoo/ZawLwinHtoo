@@ -1,7 +1,6 @@
-from datetime import datetime, timedelta, timezone
-import json
 from pathlib import Path
 import tempfile
+import shutil
 import unittest
 from unittest.mock import patch
 import xml.etree.ElementTree as ET
@@ -15,19 +14,6 @@ def repo(name, **extra):
 
 
 class ProfileTests(unittest.TestCase):
-    def test_rotation_covers_every_project_without_duplicate_cards(self):
-        now = datetime(2026, 11, 9, tzinfo=timezone.utc)
-        for count in range(1, 35):
-            repos = [repo(f"project-{i}") for i in range(count)]
-            seen = set()
-            for tick in range(count):
-                selection = sync.select_projects(repos, now + timedelta(minutes=30 * tick))
-                names = [r["name"] for r in selection]
-                self.assertEqual(len(set(names)), min(3, count))
-                seen.update(names)
-            self.assertEqual(seen, {r["name"] for r in repos})
-        self.assertEqual(sync.select_projects([], now), [])
-
     def test_only_owned_public_projects_with_forks_and_archives(self):
         values = [repo("public"), repo("private", private=True), repo(sync.OWNER),
                   repo("fork", fork=True), repo("archive", archived=True),
@@ -45,18 +31,17 @@ class ProfileTests(unittest.TestCase):
 
     def test_generation_updates_bio_name_links_and_is_repeatable(self):
         source = sync.ROOT
-        now = datetime(2026, 11, 9, tzinfo=timezone.utc)
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             assets = root / "assets"
-            assets.mkdir()
+            shutil.copytree(source / 'assets', assets)
             (root / "README.md").write_text((source / "README.md").read_text(encoding="utf-8"), encoding="utf-8")
             profile = {"login": sync.OWNER, "name": 'Zaw <&> "Htoo"', "bio": 'Build <things> & learn "daily"!'}
             projects = [repo("a-project", description="A <tool> & more"), repo("b-project"), repo("c-project")]
             with patch.object(sync, "ROOT", root), patch.object(sync.art, "ASSETS", assets):
-                sync.generate(profile, projects, now)
+                sync.generate(profile, projects)
                 first = {str(p.relative_to(root)): p.read_bytes() for p in root.rglob("*") if p.is_file()}
-                sync.generate(profile, projects, now)
+                sync.generate(profile, projects)
                 self.assertEqual(first, {str(p.relative_to(root)): p.read_bytes() for p in root.rglob("*") if p.is_file()})
                 readme = (root / "README.md").read_text(encoding="utf-8")
                 self.assertIn("&lt;things&gt; &amp; learn &quot;daily&quot;!", readme)
@@ -69,7 +54,7 @@ class ProfileTests(unittest.TestCase):
                     title = ET.parse(assets / filename).getroot().find("s:title", sync.NS).text
                     self.assertIn(profile["bio"], title)
                 profile["bio"] = None
-                sync.generate(profile, [], now)
+                sync.generate(profile, [])
                 self.assertNotIn("daily", (root / "README.md").read_text(encoding="utf-8"))
                 self.assertNotIn("BUGS", (assets / "profile-banner.svg").read_text(encoding="utf-8"))
 
@@ -79,6 +64,50 @@ class ProfileTests(unittest.TestCase):
             lines, size = sync.fit_lines(value, 540, 190, largest=112)
             self.assertLessEqual(len(lines) * size * 1.06, 190)
             self.assertEqual("".join(lines).replace(" ", ""), sync.clean(value).replace(" ", ""))
+
+    def test_bio_changes_both_artwork_and_cached_image_url(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            assets = root / "assets"
+            shutil.copytree(sync.ROOT / 'assets', assets)
+            (root / "README.md").write_text((sync.ROOT / "README.md").read_text(encoding="utf-8"), encoding="utf-8")
+            with patch.object(sync, 'ROOT', root), patch.object(sync.art, 'ASSETS', assets):
+                profile = {'login': sync.OWNER, 'name': 'Zaw', 'bio': 'Enjoy bugs!!!'}
+                sync.generate(profile, [repo('a')])
+                previous = (root / 'README.md').read_text(encoding='utf-8')
+                self.assertIn('circuit-beetle', (assets / 'profile-banner.svg').read_text(encoding='utf-8'))
+                profile['bio'] = 'hi'
+                sync.generate(profile, [repo('a')])
+                current = (root / 'README.md').read_text(encoding='utf-8')
+                for filename in ['profile-banner.svg', 'profile-banner-mobile.svg']:
+                    svg = (assets / filename).read_text(encoding='utf-8')
+                    self.assertIn('data-theme="hello"', svg)
+                    self.assertNotIn('circuit-beetle', svg)
+                    self.assertIn('hello-wave', svg)
+                self.assertNotEqual(previous.split('profile-banner.svg?v=')[1][:12],
+                                    current.split('profile-banner.svg?v=')[1][:12])
+                self.assertIn('hi', current)
+                self.assertNotIn('Enjoy bugs!!!', current)
+
+    def test_carousel_contains_every_project_and_has_unique_ids(self):
+        with tempfile.TemporaryDirectory() as folder:
+            with patch.object(sync.art, 'ASSETS', Path(folder)):
+                for count in [0, 1, 2, 3, 4, 13, 101]:
+                    projects = [repo(f'project-{index}') for index in range(count)]
+                    for mobile in [False, True]:
+                        sync.motion.carousel(projects, sync.project_card, mobile=mobile)
+                        path = Path(folder) / ('build-carousel-mobile.svg' if mobile else 'build-carousel.svg')
+                        tree = ET.parse(path)
+                        names = {node.get('data-repository') for node in tree.iter() if node.get('data-repository')}
+                        self.assertEqual(names, {r['name'] for r in projects})
+                        ids = [node.get('id') for node in tree.iter() if node.get('id')]
+                        self.assertEqual(len(ids), len(set(ids)))
+                        for panel in tree.findall('.//s:g[@class="carousel-panel"]', sync.NS):
+                            cards = [node.get('data-repository') for node in panel if node.get('data-repository')]
+                            self.assertEqual(len(cards), min(count, 3))
+                            self.assertEqual(len(cards), len(set(cards)))
+                        if count:
+                            self.assertIn('prefers-reduced-motion:reduce', path.read_text(encoding='utf-8'))
 
 
 if __name__ == "__main__":

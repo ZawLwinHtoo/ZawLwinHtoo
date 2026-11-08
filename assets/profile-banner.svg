@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-labelledby="title">
-<title id="title">Zaw Lwin Htoo / Enjoy bugs!!!</title>
+<title id="title">Zaw Lwin Htoo / hi</title>
 <defs>
 <pattern id="dot-grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#8a9885" opacity=".18" /></pattern>
 </defs>
@@ -11,6 +11,14 @@
 @keyframes breathe{0%,100%{opacity:.3}50%{opacity:.7}}
 @keyframes blink{0%,46%,49%,100%{opacity:1}47%,48%{opacity:.1}}
 @media(prefers-reduced-motion:reduce){.traffic,.ring,.eye{animation:none}}
+
+.bio-wave{animation:hello-wave 2.4s ease-in-out infinite;transform-origin:0px 55px}
+@keyframes hello-wave{0%,60%,100%{transform:rotate(0deg)}15%,35%{transform:rotate(13deg)}25%,45%{transform:rotate(-10deg)}}
+.bio-cursor{animation:cursor-blink 1s step-end infinite}
+@keyframes cursor-blink{50%{opacity:0}}
+.bio-pulse{animation:bio-pulse 3s ease-in-out infinite;transform-origin:0 0}
+@keyframes bio-pulse{0%,100%{opacity:.65}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.bio-wave,.bio-cursor,.bio-pulse{animation:none}}
 </style>
 <rect width="1200" height="460" rx="20" fill="#131613" />
 <rect width="1200" height="460" rx="20" fill="url(#dot-grid)" />
@@ -25,20 +33,17 @@
 <path d="M700 233h368M884 61v344" stroke="#374132" stroke-dasharray="4 8" />
 <path d="M600 315h78v-82h48M1041 233h84v-83h45" fill="none" stroke="#46513e" stroke-width="2" />
 <path class="traffic" d="M600 315h78v-82h48" fill="none" stroke="#c9ff59" stroke-width="3" pathLength="100" stroke-dasharray="8 92" />
-<g id="circuit-beetle" transform="translate(884 245) scale(0.95)">
-<g fill="none" stroke="#c9ff59" stroke-width="5" stroke-linecap="square" stroke-linejoin="round">
-<path d="M-44-20-85-44h-24m65 55h-54l-14 20m71 13-36 30v25M44-20l41-24h24M44 11h54l14 20M41 44l36 30v25" />
-<path d="M-21-85-43-113v-16M21-85l22-28v-16" />
-</g>
-<g fill="#c9ff59"><circle cx="-43" cy="-134" r="6" /><circle cx="43" cy="-134" r="6" />
-<path d="M-39-62a39 32 0 0 1 78 0v24h-78z" />
-<path d="M-4-29C-75-48-77 70-4 91ZM4-29C75-48 77 70 4 91Z" />
-</g>
-<g fill="#131613"><rect class="eye" x="-21" y="-68" width="10" height="10" rx="2" /><rect class="eye" x="11" y="-68" width="10" height="10" rx="2" /></g>
-<path d="M-40-2h18v22h-16m78-22H22v22h16M-29 46h12m34 0h12" fill="none" stroke="#131613" stroke-width="4" />
-</g>
-<text x="1020" y="352" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="15" font-weight="400">BUG / 001</text></g>
+<text x="1020" y="352" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="15" font-weight="400">HELLO / 001</text></g>
 <path d="M44 391h1112" stroke="#374132" />
-<text x="44" y="429" fill="#f4f4e8" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="400">CODE. BREAK. LEARN. REPEAT.</text>
+<text x="44" y="429" fill="#f4f4e8" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="400">SAY HELLO. KEEP EXPLORING.</text>
 <text x="964" y="429" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400">@ZawLwinHtoo</text>
-<text x="44" y="206.5" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="105" font-weight="900">ENJOY</text><text x="44" y="317.8" fill="#c9ff59" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="105" font-weight="900">BUGS!!!</text></svg>
+<g id="bio-illustration" data-theme="hello" transform="translate(884 245) scale(0.95)"><g class="bio-wave" fill="#c9ff59">
+<rect x="-47" y="-83" width="21" height="117" rx="10" />
+<rect x="-23" y="-106" width="21" height="140" rx="10" />
+<rect x="1" y="-99" width="21" height="133" rx="10" />
+<rect x="25" y="-77" width="21" height="111" rx="10" />
+<rect x="-47" y="-10" width="93" height="106" rx="40" />
+<rect x="-76" y="-4" width="27" height="89" rx="13" transform="rotate(-35 -62 40)" />
+<path d="M-30 80h60v37h-60z" />
+<path d="M-18 26q39 0 41 38" fill="none" stroke="#131613" stroke-width="5" />
+</g><g fill="none" stroke="#c9ff59" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity=".65"><path d="M-101-59q-25 30-12 62M-119-78q-35 41-21 86M86-98q26 26 23 58M107-117q36 35 32 81" /></g></g><text x="44" y="271.7" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="134" font-weight="900">HI</text></svg>
