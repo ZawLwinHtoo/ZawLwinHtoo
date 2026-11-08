@@ -1,6 +1,6 @@
 <picture>
-  <source media="(max-width: 600px)" srcset="assets/profile-banner-mobile.svg?v=e681f05881e4">
-  <img src="assets/profile-banner.svg?v=45b16d33b5ab" alt="Zaw Lwin Htoo. hi" width="100%">
+  <source media="(max-width: 600px)" srcset="assets/profile-banner-mobile.svg?v=0c67bd94d90e">
+  <img src="assets/profile-banner.svg?v=1f10274fd078" alt="Zaw Lwin Htoo. hi" width="100%">
 </picture>
 
 <p align="center">
@@ -21,8 +21,8 @@
 Three at a time. All 13 public projects. A new slide every six seconds.
 
 <picture>
-  <source media="(max-width: 600px)" srcset="assets/build-carousel-mobile.svg?v=27ac9ed93594">
-  <img src="assets/build-carousel.svg?v=a00756f93c1f" alt="Animated project showcase. Three cards slide to the next projects every six seconds. Repository links are below." width="100%">
+  <source media="(max-width: 600px)" srcset="assets/build-carousel-mobile.svg?v=4087e3d6763b">
+  <img src="assets/build-carousel.svg?v=eb5fe676c9c9" alt="Animated project showcase. Three cards slide to the next projects every six seconds. Repository links are below." width="100%">
 </picture>
 
 <details>
@@ -63,18 +63,18 @@ Three at a time. All 13 public projects. A new slide every six seconds.
 Languages from my projects. Always room for something new.
 
 <p>
-  <img src="assets/tool-python.svg?v=382a50d158d0" alt="Python" width="136" height="48">
-  <img src="assets/tool-javascript.svg?v=c21376b9944b" alt="JavaScript" width="136" height="48">
-  <img src="assets/tool-cpp.svg?v=b87a1e2c9a59" alt="C++" width="136" height="48">
-  <img src="assets/tool-c.svg?v=b906f73db31c" alt="C" width="136" height="48">
-  <img src="assets/tool-css.svg?v=2e428e0f8c39" alt="CSS" width="136" height="48">
+  <img src="assets/tool-python.svg?v=96b9c6a9fa03" alt="Python" width="136" height="48">
+  <img src="assets/tool-javascript.svg?v=663e88b60a6c" alt="JavaScript" width="136" height="48">
+  <img src="assets/tool-cpp.svg?v=c7ea8a5ab759" alt="C++" width="136" height="48">
+  <img src="assets/tool-c.svg?v=9ccbce76b7c4" alt="C" width="136" height="48">
+  <img src="assets/tool-css.svg?v=6f5381431810" alt="CSS" width="136" height="48">
 </p>
 
 <br>
 
 <a href="https://github.com/ZawLwinHtoo?tab=repositories">
   <picture>
-    <source media="(max-width: 600px)" srcset="assets/afterword-mobile.svg?v=43a5a031d85a">
-    <img src="assets/afterword.svg?v=0a8fad7c0f4e" alt="Every bug is a plot twist. See what I'm building next." width="100%">
+    <source media="(max-width: 600px)" srcset="assets/afterword-mobile.svg?v=53e60ee22db4">
+    <img src="assets/afterword.svg?v=01cb70b38ee6" alt="Every bug is a plot twist. See what I'm building next." width="100%">
   </picture>
 </a>
