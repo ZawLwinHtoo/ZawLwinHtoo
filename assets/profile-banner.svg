@@ -1,31 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
-  <title id="title">Zaw Lwin Htoo</title>
-  <desc id="desc">Building ideas into useful software</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0b1020"/>
-      <stop offset="0.55" stop-color="#111c3a"/>
-      <stop offset="1" stop-color="#172554"/>
-    </linearGradient>
-    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#22d3ee"/>
-      <stop offset="1" stop-color="#818cf8"/>
-    </linearGradient>
-    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
-      <path d="M36 0H0V36" fill="none" stroke="#c7d2fe" stroke-opacity=".08" stroke-width="1"/>
-    </pattern>
-    <filter id="blur"><feGaussianBlur stdDeviation="28"/></filter>
-  </defs>
-  <rect width="1200" height="320" rx="24" fill="url(#bg)"/>
-  <rect width="1200" height="320" rx="24" fill="url(#grid)"/>
-  <circle cx="1010" cy="84" r="120" fill="#4f46e5" opacity=".24" filter="url(#blur)"/>
-  <circle cx="830" cy="270" r="110" fill="#06b6d4" opacity=".16" filter="url(#blur)"/>
-  <path d="M770 0v320M920 0v320M1070 0v320" stroke="#c7d2fe" stroke-opacity=".08"/>
-  <path d="M770 220h150v-72h150v-76h130" fill="none" stroke="url(#glow)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
-  <circle cx="920" cy="220" r="5" fill="#67e8f9"/>
-  <circle cx="1070" cy="148" r="5" fill="#a5b4fc"/>
-  <rect x="70" y="74" width="44" height="4" rx="2" fill="url(#glow)"/>
-  <text x="70" y="151" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" letter-spacing="-1">Zaw Lwin Htoo</text>
-  <text x="72" y="197" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="21" letter-spacing=".4">BUILDING IDEAS INTO USEFUL SOFTWARE</text>
-  <text x="72" y="256" fill="#67e8f9" font-family="Consolas, monospace" font-size="16">&lt; learn / build / repeat /&gt;</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-labelledby="title">
+<title id="title">Zaw Lwin Htoo / Enjoy bugs / Code, break, learn, repeat</title>
+<defs>
+<pattern id="dot-grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#8a9885" opacity=".18"/></pattern>
+</defs>
+<style>
+.traffic{animation:travel 9s linear infinite}
+.ring{animation:breathe 5s ease-in-out infinite}
+.eye{animation:blink 8s step-end infinite}
+@keyframes travel{to{stroke-dashoffset:-100}}
+@keyframes breathe{0%,100%{opacity:.3}50%{opacity:.7}}
+@keyframes blink{0%,46%,49%,100%{opacity:1}47%,48%{opacity:.1}}
+@media(prefers-reduced-motion:reduce){.traffic,.ring,.eye{animation:none}}
+</style>
+<rect width="1200" height="460" rx="20" fill="#131613"/>
+<rect width="1200" height="460" rx="20" fill="url(#dot-grid)"/>
+<g id="identity"><path d="M30 32h14v14H30zM48 32h6v6h-6zM48 42h6v12h-6z" fill="#c9ff59"/>
+<text x="70" y="48" fill="#f4f4e8" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="700" >ZAW LWIN HTOO</text></g>
+<text x="904" y="48" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400" >CURIOUS BY DEFAULT</text>
+<g id="headline">
+<text x="44" y="197" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="134" font-weight="900" letter-spacing="-7">ENJOY</text>
+<text x="44" y="328" fill="#c9ff59" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="134" font-weight="900" letter-spacing="-7">BUGS.</text></g>
+<g id="specimen">
+<circle cx="884" cy="233" r="158" fill="#1b2119" stroke="#374132"/>
+<circle class="ring" cx="884" cy="233" r="139" fill="none" stroke="#c9ff59" stroke-dasharray="3 14"/>
+<path d="M700 233h368M884 61v344" stroke="#374132" stroke-dasharray="4 8"/>
+<path d="M600 315h78v-82h48M1041 233h84v-83h45" fill="none" stroke="#46513e" stroke-width="2"/>
+<path class="traffic" d="M600 315h78v-82h48" fill="none" stroke="#c9ff59" stroke-width="3" pathLength="100" stroke-dasharray="8 92"/>
+<g id="circuit-beetle" transform="translate(884 245) scale(0.95)">
+<g fill="none" stroke="#c9ff59" stroke-width="5" stroke-linecap="square" stroke-linejoin="round">
+<path d="M-44-20-85-44h-24m65 55h-54l-14 20m71 13-36 30v25M44-20l41-24h24M44 11h54l14 20M41 44l36 30v25"/>
+<path d="M-21-85-43-113v-16M21-85l22-28v-16"/>
+</g>
+<g fill="#c9ff59"><circle cx="-43" cy="-134" r="6"/><circle cx="43" cy="-134" r="6"/>
+<path d="M-39-62a39 32 0 0 1 78 0v24h-78z"/>
+<path d="M-4-29C-75-48-77 70-4 91ZM4-29C75-48 77 70 4 91Z"/>
+</g>
+<g fill="#131613"><rect class="eye" x="-21" y="-68" width="10" height="10" rx="2"/><rect class="eye" x="11" y="-68" width="10" height="10" rx="2"/></g>
+<path d="M-40-2h18v22h-16m78-22H22v22h16M-29 46h12m34 0h12" fill="none" stroke="#131613" stroke-width="4"/>
+</g>
+<text x="1020" y="352" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="15" font-weight="400" >BUG / 001</text></g>
+<path d="M44 391h1112" stroke="#374132"/>
+<text x="44" y="429" fill="#f4f4e8" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="400" >CODE. BREAK. LEARN. REPEAT.</text>
+<text x="964" y="429" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400" >@ZawLwinHtoo</text>
 </svg>

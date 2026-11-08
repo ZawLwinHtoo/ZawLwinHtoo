@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="360" viewBox="0 0 580 360" role="img" aria-labelledby="title">
+<title id="title">Menu Maker / Create and manage menus</title>
+<rect width="580" height="360" rx="16" fill="#29201b"/>
+<text x="26" y="42" fill="#ffb184" font-family="Consolas, 'Liberation Mono', monospace" font-size="19" font-weight="400" >02 / WEB APP</text>
+<text x="24" y="121" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="63" font-weight="900" letter-spacing="-3">Menu</text>
+<text x="24" y="184" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="63" font-weight="900" letter-spacing="-3">Maker.</text>
+<g transform="translate(359 96) rotate(9)">
+<rect width="160" height="195" rx="9" fill="#fbdfc6"/>
+<rect x="17" y="18" width="37" height="6" rx="2" fill="#a74420"/>
+<text x="17" y="61" fill="#3d261c" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="22" font-weight="900" >MENU</text>
+<g stroke="#b47d56" stroke-width="4" stroke-linecap="round"><path d="M19 87h70m20 0h30M19 111h85m16 0h19M19 135h61m25 0h34M19 159h78m20 0h22"/></g></g>
+<circle cx="488" cy="262" r="37" fill="#ff9d66"/>
+<path d="M472 262h30m-11-11 11 11-11 11" fill="none" stroke="#3d261c" stroke-width="4"/>
+<text x="26" y="323" fill="#ffb184" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400" >CREATE / ORGANIZE</text>
+</svg>

@@ -1,63 +1,76 @@
-<div align="center">
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/profile-banner-mobile.svg">
+  <img src="assets/profile-banner.svg" alt="Zaw Lwin Htoo. Enjoy bugs. Code, break, learn, repeat. An animated circuit beetle on charcoal and acid green." width="100%">
+</picture>
 
-<img src="assets/profile-banner.svg" alt="Zaw Lwin Htoo — Building ideas into useful software" width="100%" />
-
-### Hey, I'm Zaw Lwin Htoo 👋
-
-I enjoy turning ideas into working software and learning by building real projects.
-
-[![GitHub](https://img.shields.io/badge/GitHub-ZawLwinHtoo-111827?style=for-the-badge&logo=github)](https://github.com/ZawLwinHtoo)
-
-</div>
-
----
-
-## ✨ Featured projects
-
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🛵 LannPya AI</h3>
-      <p>AI-assisted last-mile delivery tools for merchants and couriers in Myanmar, including Burmese address parsing.</p>
-      <a href="https://github.com/ZawLwinHtoo/lannpya-ai">Explore the project →</a>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🍽️ Menu Maker</h3>
-      <p>A web app for creating and managing menus.</p>
-      <a href="https://github.com/ZawLwinHtoo/menu-maker">Explore the project →</a>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🅿️ Parking Management System</h3>
-      <p>A parking project organized around user and admin interfaces with supporting backends.</p>
-      <a href="https://github.com/ZawLwinHtoo/parking-management-system">Explore the project →</a>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🌱 Always learning</h3>
-      <p>Experimenting with web development, software projects, and new ways to make useful things.</p>
-      <a href="https://github.com/ZawLwinHtoo?tab=repositories">Browse all repositories →</a>
-    </td>
-  </tr>
-</table>
-
-## 🧰 Technologies
-
-<p>
-  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++" />
-  <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=111827" alt="C" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111827" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/CSS-663399?style=flat-square&logo=css&logoColor=white" alt="CSS" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+<p align="center">
+  <b>Hi, I'm Zaw.</b> I turn ideas into working software, one experiment at a time.<br>
+  Web apps, useful tools, and a healthy curiosity about what happens when things break.
 </p>
 
-## 📌 Find me
+<p align="center">
+  <a href="#selected-builds">Selected builds</a> &nbsp; / &nbsp;
+  <a href="#the-toolbox">The toolbox</a> &nbsp; / &nbsp;
+  <a href="https://github.com/ZawLwinHtoo?tab=repositories">All repositories ↗</a>
+</p>
 
-- GitHub: [@ZawLwinHtoo](https://github.com/ZawLwinHtoo)
-- Take a look at my [pinned projects](https://github.com/ZawLwinHtoo?tab=repositories)
+<br>
 
-<div align="center">
+## Selected builds
 
-*Still learning. Still building. Still enjoying the bugs.* 🐛
+<a href="https://github.com/ZawLwinHtoo/lannpya-ai">
+  <picture>
+    <source media="(max-width: 600px)" srcset="assets/project-lannpya-mobile.svg">
+    <img src="assets/project-lannpya.svg" alt="01. LannPya AI — delivery tooling for Myanmar, illustrated with a dispatch route map. Open the repository." width="100%">
+  </picture>
+</a>
 
-</div>
+Delivery tooling for Myanmar merchants and couriers: Burmese address parsing, dispatcher workflows, and rider queues. [Explore LannPya AI →](https://github.com/ZawLwinHtoo/lannpya-ai)
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+<a href="https://github.com/ZawLwinHtoo/menu-maker"><img src="assets/project-menu.svg" alt="02. Menu Maker. A graphic menu with orange accents. Open the repository." width="100%"></a>
+
+**Menu Maker**<br>
+A web app for creating and managing menus.
+
+[Explore the project →](https://github.com/ZawLwinHtoo/menu-maker)
+
+</td>
+<td width="50%" valign="top">
+
+<a href="https://github.com/ZawLwinHtoo/parking-management-system"><img src="assets/project-parking.svg" alt="03. Parking Management. An illustrated parking grid in electric blue. Open the repository." width="100%"></a>
+
+**Parking Management**<br>
+User and admin interfaces with supporting backends.
+
+[Explore the project →](https://github.com/ZawLwinHtoo/parking-management-system)
+
+</td>
+</tr>
+</table>
+
+<br>
+
+## The toolbox
+
+Languages from my projects. Always room for something new.
+
+<p>
+  <img src="assets/tool-python.svg" alt="Python" width="136" height="48">
+  <img src="assets/tool-javascript.svg" alt="JavaScript" width="136" height="48">
+  <img src="assets/tool-cpp.svg" alt="C++" width="136" height="48">
+  <img src="assets/tool-c.svg" alt="C" width="136" height="48">
+  <img src="assets/tool-css.svg" alt="CSS" width="136" height="48">
+</p>
+
+<br>
+
+<a href="https://github.com/ZawLwinHtoo?tab=repositories">
+  <picture>
+    <source media="(max-width: 600px)" srcset="assets/afterword-mobile.svg">
+    <img src="assets/afterword.svg" alt="Every bug is a plot twist. See what I'm building next." width="100%">
+  </picture>
+</a>

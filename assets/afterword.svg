@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="154" viewBox="0 0 1200 154" role="img" aria-labelledby="title">
+<title id="title">Every bug is a plot twist / See what I&#x27;m building next</title>
+<rect width="1200" height="154" rx="16" fill="#c9ff59"/>
+<path d="M1065 0v154" stroke="#131613" stroke-opacity=".2"/>
+<text x="34" y="60" fill="#131613" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="40" font-weight="900" letter-spacing="-1">EVERY BUG IS</text>
+<text x="34" y="110" fill="#131613" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="40" font-weight="900" letter-spacing="-1">A PLOT TWIST.</text>
+<text x="665" y="87" fill="#131613" font-family="Consolas, 'Liberation Mono', monospace" font-size="21" font-weight="500" >See what I’m building next</text>
+<path d="M1110 98l37-37m-34 0h34v34" fill="none" stroke="#131613" stroke-width="6"/>
+
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="550" viewBox="0 0 600 550" role="img" aria-labelledby="title">
+<title id="title">LannPya AI / Delivery tooling for Myanmar</title>
+<rect width="600" height="550" rx="18" fill="#192218"/>
+<text x="30" y="46" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400" >01 / LOGISTICS</text>
+<text x="30" y="120" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="64" font-weight="900" letter-spacing="-3">LannPya AI.</text>
+<text x="32" y="160" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400" >LOCAL CONTEXT. PRACTICAL TOOLS.</text>
+<g transform="translate(30 192) scale(1.15)">
+<rect width="470" height="228" rx="12" fill="#1d291e" stroke="#405437"/>
+<g stroke="#354431" stroke-width="15"><path d="M0 54h470M0 174h470M64 0v228M259 0v228M405 0v228"/></g>
+<g stroke="#283724" stroke-width="1"><path d="M0 54h470M0 174h470M64 0v228M259 0v228M405 0v228"/></g>
+<path d="M64 174h195V54h146" fill="none" stroke="#c9ff59" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="64" cy="174" r="13" fill="#c9ff59"/><circle cx="64" cy="174" r="5" fill="#131613"/>
+<circle cx="405" cy="54" r="13" fill="#c9ff59"/><circle cx="405" cy="54" r="5" fill="#131613"/>
+<rect x="238" y="109" width="42" height="35" rx="7" fill="#f4f4e8" stroke="#131613" stroke-width="3"/>
+<path d="m250 131 9-10 9 10" fill="none" stroke="#131613" stroke-width="3"/>
+<rect x="94" y="145" width="105" height="28" rx="5" fill="#131613"/>
+<text x="104" y="164" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="14" font-weight="400" >DISPATCH</text>
+<rect x="326" y="86" width="112" height="28" rx="5" fill="#131613"/>
+<text x="337" y="105" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="14" font-weight="400" >DELIVERY</text></g>
+<text x="32" y="509" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400" >PYTHON / FASTAPI</text>
+<text x="480" y="511" fill="#c9ff59" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="36" font-weight="400" >↗</text>
+</svg>
