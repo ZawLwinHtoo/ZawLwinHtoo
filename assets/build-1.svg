@@ -1,9 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="title">
-<title id="title">swot / FORK</title>
-<rect width="1200" height="340" rx="18" fill="#192218"/><text x="30" y="44" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="400" >01 / FORK</text><text x="28" y="108.0" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="70" font-weight="900" >swot</text><g transform="translate(735 68) scale(1)">
-<rect width="320" height="196" rx="12" fill="#131613" stroke="#c9ff59" stroke-opacity=".4"/>
-<path d="M0 34h320" stroke="#c9ff59" stroke-opacity=".25"/>
-<g fill="#c9ff59"><circle cx="18" cy="17" r="4"/><circle cx="34" cy="17" r="4"/><circle cx="50" cy="17" r="4"/></g>
-<path d="m34 78 24 22-24 22m47 0h45M34 155h112m18 0h56" fill="none" stroke="#c9ff59" stroke-width="6"/>
-</g><text x="30" y="310" fill="#c9ff59" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400" >FORK / OPEN REPOSITORY</text>
+<title id="title">swot / EDUCATION, RECOGNIZED</title>
+<defs>
+<radialGradient id="card-244bdf2f6-glow" cx="85%" cy="20%" r="80%"><stop stop-color="#90dfef" stop-opacity=".12"/><stop offset="1" stop-color="#90dfef" stop-opacity="0"/></radialGradient>
+<pattern id="card-244bdf2f6-dots" width="23" height="23" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".8" fill="#90dfef" opacity=".12"/></pattern>
+</defs>
+<rect x="1" y="1" width="1198" height="338" rx="22" fill="#19313c" stroke="#90dfef" stroke-opacity=".18"/>
+<rect width="1200" height="340" rx="22" fill="url(#card-244bdf2f6-glow)"/>
+<rect width="1200" height="340" rx="22" fill="url(#card-244bdf2f6-dots)"/>
+<path d="M30 24h26" stroke="#90dfef" stroke-width="3" stroke-linecap="round"/>
+<text x="30" y="51" fill="#90dfef" font-family="Consolas, 'Liberation Mono', monospace" font-size="14" font-weight="700" letter-spacing="1.5">EDUCATION, RECOGNIZED</text><text x="28" y="105.0" fill="#f4f4ed" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="68" font-weight="800" letter-spacing="-1.5">swot</text><text x="31" y="245" fill="#b9c5bb" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" >Connecting people and education.</text><g transform="translate(680 32) scale(1.05)"><g class="scene-float"><ellipse cx="210" cy="238" rx="157" ry="14" fill="#000" opacity=".22"/><path d="m352 21 5 15 15 5-15 5-5 15-5-15-15-5 15-5Z" fill="#90dfef" opacity=".8"/><g transform="rotate(-9 183 169)"><rect x="53" y="150" width="264" height="63" rx="7" fill="#c1715d" /><rect x="60" y="149" width="247" height="48" rx="5" fill="#f1e5d5" /><path d="M76 164h218m-218 13h218" stroke="#d8c7ae" stroke-width="3"/><rect x="43" y="130" width="276" height="25" rx="6" fill="#90dfef" /><rect x="67" y="98" width="248" height="35" rx="5" fill="#eed8ba" /></g><path d="m61 75 140-62 140 62-140 62Z" fill="#90dfef"/><path d="M115 99v42q86 52 172-5V99l-86 38Z" fill="#4b8395"/><path d="M332 78v74" stroke="#90dfef" stroke-width="5"/><circle cx="332" cy="157" r="10" fill="#90dfef"/></g></g><rect x="29" y="291" width="82" height="29" rx="8" fill="#10191b" stroke="#90dfef" stroke-opacity=".28"/><text x="44" y="311" fill="#90dfef" font-family="Consolas, 'Liberation Mono', monospace" font-size="15" font-weight="600" >Fork</text><circle cx="1160" cy="305" r="15" fill="#90dfef" fill-opacity=".12"/><path d="m1155 310 10-10m-10 0h10v10" fill="none" stroke="#90dfef" stroke-width="2"/>
 </svg>

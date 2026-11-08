@@ -14,6 +14,7 @@ import xml.etree.ElementTree as ET
 
 import generate_artwork as art
 import profile_motion as motion
+import project_art
 
 ROOT = Path(__file__).resolve().parents[1]
 OWNER = "ZawLwinHtoo"
@@ -63,24 +64,24 @@ def public_projects(repos, owner):
 
 
 def wrapped(value, width):
-    return textwrap.wrap(clean(value), width=width, break_long_words=True,
+    # Keep normal words intact; only split unusually long unbroken strings.
+    split_long = max((len(word) for word in clean(value).split()), default=0) > 32
+    return textwrap.wrap(clean(value), width=width, break_long_words=split_long,
                          break_on_hyphens=False, replace_whitespace=True)
 
 
 def fit_lines(value, width, height, largest=134, smallest=18):
     for size in range(largest, smallest - 1, -1):
-        lines = wrapped(value, max(1, int(width / (size * .76))))
-        if len(lines) * size * 1.06 <= height:
+        columns = max(1, int(width / (size * .76)))
+        lines = wrapped(value, columns)
+        if all(len(line) <= columns for line in lines) and len(lines) * size * 1.06 <= height:
             return lines, size
     raise ValueError("Text exceeds the supported profile bio length")
 
 
-def banner(profile, mobile=False):
+def render_banner(profile, mobile=False):
     # Retain the layout, but match both the headline and illustration to the bio.
-    art.hero(mobile=mobile)
-    filename = "profile-banner-mobile.svg" if mobile else "profile-banner.svg"
-    tree = ET.parse(art.ASSETS / filename)
-    root = tree.getroot()
+    root = ET.fromstring(art.hero(mobile=mobile, write=False))
     name = clean(profile.get("name")) or profile["login"]
     bio = clean(profile.get("bio"))
     theme, illustration = motion.bio_figure(bio or name, 309 if mobile else 884,
@@ -110,11 +111,12 @@ def banner(profile, mobile=False):
 '''
     x, top, width, height = (30, 88, 540, 190) if mobile else (44, 95, 560, 265)
     # An empty bio displays the current name rather than an outdated slogan.
-    lines, size = fit_lines((bio or name).upper(), width, height, 112 if mobile else 134)
+    lines, size = fit_lines(bio or name, width, height, 112 if mobile else 134)
     start = top + (height - len(lines) * size * 1.06) / 2 + size * .86
     for index, line in enumerate(lines):
         node = ET.fromstring(art.text(x, round(start + index * size * 1.06, 1), line,
-                                     size, art.CREAM if index % 2 == 0 else art.LIME, 900))
+                                     size, art.CREAM if index % 2 == 0 else art.LIME, 900,
+                                     extra='data-bio-line="true"'))
         node.tag = "{" + NS["s"] + "}text"
         root.append(node)
     for node in root.findall(".//s:text", NS):
@@ -127,7 +129,12 @@ def banner(profile, mobile=False):
         elif theme != "bugs" and clean(node.text) == "CODE. BREAK. LEARN. REPEAT.":
             node.text = "SAY HELLO. KEEP EXPLORING." if theme == "hello" else "CREATE. EXPLORE. KEEP GOING."
     ET.register_namespace("", NS["s"])
-    tree.write(art.ASSETS / filename, encoding="unicode", xml_declaration=False)
+    return ET.tostring(root, encoding="unicode")
+
+
+def banner(profile, mobile=False):
+    filename = "profile-banner-mobile.svg" if mobile else "profile-banner.svg"
+    (art.ASSETS / filename).write_text(render_banner(profile, mobile), encoding="utf-8", newline="\n")
 
 
 def project_title(repo):
@@ -135,43 +142,7 @@ def project_title(repo):
 
 
 def project_card(repo, slot, mobile=False):
-    # Preserve the three bespoke illustrations for their matching repositories.
-    originals = {"lannpya-ai": "project-lannpya", "menu-maker": "project-menu",
-                 "parking-management-system": "project-parking"}
-    if repo["name"] in originals:
-        base = originals[repo["name"]]
-        suffix = "-mobile" if mobile and repo["name"] == "lannpya-ai" else ""
-        return base + suffix + ".svg"
-    large = slot == 0
-    w, h = (600, 550) if large and mobile else ((1200, 340) if large else (580, 360))
-    accent, bg = [(art.LIME, "#192218"), ("#ffb184", "#29201b"),
-                  ("#89d5ff", "#172532")][slot]
-    title = project_title(repo)
-    text_width = 540 if mobile or not large else 580
-    lines, size = fit_lines(title, text_width - 50, 145, 70 if large else 59)
-    content = f'<rect width="{w}" height="{h}" rx="18" fill="{bg}"/>'
-    label = clean(repo.get("language")) or ("FORK" if repo.get("fork") else "PROJECT")
-    content += art.text(30, 44, f"{slot + 1:02} / {label.upper()}", 18, accent, mono=True)
-    for i, line in enumerate(lines):
-        content += art.text(28, 108 + i * size * 1.06, line, size, weight=900)
-    # Original terminal illustration for every other repository.
-    gx, gy, scale = (735, 68, 1) if large and not mobile else ((280, 302, .75) if large else (349, 202, .65))
-    content += f'''<g transform="translate({gx} {gy}) scale({scale})">
-<rect width="320" height="196" rx="12" fill="{art.INK}" stroke="{accent}" stroke-opacity=".4"/>
-<path d="M0 34h320" stroke="{accent}" stroke-opacity=".25"/>
-<g fill="{accent}"><circle cx="18" cy="17" r="4"/><circle cx="34" cy="17" r="4"/><circle cx="50" cy="17" r="4"/></g>
-<path d="m34 78 24 22-24 22m47 0h45M34 155h112m18 0h56" fill="none" stroke="{accent}" stroke-width="6"/>
-</g>'''
-    tags = []
-    if repo.get("fork"):
-        tags.append("FORK")
-    if repo.get("archived"):
-        tags.append("ARCHIVED")
-    tags.append("OPEN REPOSITORY")
-    content += art.text(30, h - 30, " / ".join(tags), 17, accent, mono=True)
-    filename = f"build-{slot + 1}{'-mobile' if mobile else ''}.svg"
-    art.svg(filename, w, h, title + " / " + label, content)
-    return filename
+    return project_art.card(repo, slot, mobile, fit_lines)
 
 
 def description(repo):
@@ -188,15 +159,30 @@ def generate(profile, repos):
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     name = escape(clean(profile.get("name")) or profile["login"])
     bio = escape(clean(profile.get("bio")))
-    # Avoid stale biography text and stale image alt text after a profile edit.
-    readme = re.sub(r'alt="[^"]*"(?= width="100%">\n</picture>)',
-                    lambda _: 'alt="' + escape(clean(profile.get("name")) or profile["login"], quote=True) + '. ' + bio + '"',
-                    readme, count=1)
-    introduction = f'<p align="center">\n  <b>Hi, I\'m {name}.</b>'
-    if bio:
-        introduction += f'<br>\n  {bio}'
-    introduction += '\n</p>'
-    readme = re.sub(r'<p align="center">.*?</p>', lambda _: introduction, readme, count=1, flags=re.S)
+    configuration = ROOT / 'live-profile.json'
+    live_url = json.loads(configuration.read_text())['banner_url'] if configuration.exists() else None
+    if live_url:
+        desktop_source = escape(live_url + '?v=4', quote=True)
+        mobile_source = escape(live_url + '?mobile=1&v=4', quote=True)
+        banner_alt = 'Current GitHub bio with its matching animated illustration'
+        introduction = ''
+    else:
+        desktop_source, mobile_source = 'assets/profile-banner.svg', 'assets/profile-banner-mobile.svg'
+        banner_alt = name + '. ' + bio
+        introduction = f'<p align="center">\n  <b>Hi, I\'m {name}.</b><br>\n  {bio}\n</p>\n\n'
+    header = f'''<picture>
+  <source media="(max-width: 600px)" srcset="{mobile_source}">
+  <img src="{desktop_source}" alt="{banner_alt}" width="100%">
+</picture>
+
+{introduction}<p align="center">
+  <a href="#selected-builds">Selected builds</a> &nbsp; / &nbsp;
+  <a href="#the-toolbox">The toolbox</a> &nbsp; / &nbsp;
+  <a href="https://github.com/{profile['login']}?tab=repositories">All repositories ↗</a>
+</p>
+
+'''
+    readme = re.sub(r'\A.*?(?=## Selected builds)', lambda _: header, readme, flags=re.S)
     motion.carousel(projects, project_card)
     motion.carousel(projects, project_card, mobile=True)
     builds = "## Selected builds\n\n"
@@ -221,7 +207,7 @@ def generate(profile, repos):
     # A changed image receives a new URL so GitHub/browser caches fetch its new content.
     def versioned(match):
         asset = art.ASSETS / match.group(2)
-        version = sha256(asset.read_bytes()).hexdigest()[:12]
+        version = sha256(asset.read_text(encoding='utf-8').encode('utf-8')).hexdigest()[:12]
         return f'{match.group(1)}="assets/{match.group(2)}?v={version}"'
     readme = re.sub(r'(src|srcset)="assets/([^"?]+\.svg)(?:\?[^\"]*)?"', versioned, readme)
     (ROOT / "README.md").write_text(readme, encoding="utf-8", newline="\n")

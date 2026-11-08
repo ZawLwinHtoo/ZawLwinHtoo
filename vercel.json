@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/banner.py": { "maxDuration": 20, "excludeFiles": "{.preview/**,.git/**,assets/**,**/test_*.py}" }
+  }
+}

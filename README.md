@@ -1,12 +1,7 @@
 <picture>
-  <source media="(max-width: 600px)" srcset="assets/profile-banner-mobile.svg?v=0c67bd94d90e">
-  <img src="assets/profile-banner.svg?v=1f10274fd078" alt="Zaw Lwin Htoo. hi" width="100%">
+  <source media="(max-width: 600px)" srcset="https://zaw-live-profile.vercel.app/api/banner?mobile=1&amp;v=4">
+  <img src="https://zaw-live-profile.vercel.app/api/banner?v=4" alt="Current GitHub bio with its matching animated illustration" width="100%">
 </picture>
-
-<p align="center">
-  <b>Hi, I'm Zaw Lwin Htoo.</b><br>
-  hi
-</p>
 
 <p align="center">
   <a href="#selected-builds">Selected builds</a> &nbsp; / &nbsp;
@@ -14,15 +9,13 @@
   <a href="https://github.com/ZawLwinHtoo?tab=repositories">All repositories ↗</a>
 </p>
 
-<br>
-
 ## Selected builds
 
 Three at a time. All 13 public projects. A new slide every six seconds.
 
 <picture>
-  <source media="(max-width: 600px)" srcset="assets/build-carousel-mobile.svg?v=4087e3d6763b">
-  <img src="assets/build-carousel.svg?v=eb5fe676c9c9" alt="Animated project showcase. Three cards slide to the next projects every six seconds. Repository links are below." width="100%">
+  <source media="(max-width: 600px)" srcset="assets/build-carousel-mobile.svg?v=a5c5e8e339e5">
+  <img src="assets/build-carousel.svg?v=d77589c55015" alt="Animated project showcase. Three cards slide to the next projects every six seconds. Repository links are below." width="100%">
 </picture>
 
 <details>

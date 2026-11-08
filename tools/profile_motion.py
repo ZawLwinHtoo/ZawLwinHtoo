@@ -17,7 +17,7 @@ def bio_theme(bio):
         ("nature", {"nature", "plant", "plants", "garden", "grow", "growing"}),
         ("games", {"game", "games", "gaming", "gamer"}),
         ("space", {"space", "rocket", "stars", "astronaut"}),
-        ("study", {"study", "studying", "student", "learn", "learning", "reading"}),
+        ("study", {"study", "studying", "student", "learn", "learning", "learner", "reading", "knowledge", "curious", "curiosity", "books", "book", "education"}),
         ("love", {"love", "heart", "happy", "happiness"}),
         ("hello", {"hi", "hello", "hey", "welcome", "mingalabar"}),
     ]
@@ -69,7 +69,12 @@ def bio_figure(bio, x, y, scale=1):
         shape = f'''<g {common}><path d="M-33 35Q-71-57 46-111 98 6 13 60ZM-33-5q-58-4-67 61l67-21M38 45q13 50-45 81L13 60"/>
 <circle cx="17" cy="-39" r="20"/><path class="bio-pulse" d="M-49 70-77 102M-30 82-45 111"/></g>'''
     elif theme == "study":
-        shape = f'''<g {common}><path d="M0-67q-56-38-119-9V93q68-31 119 7 51-38 119-7V-76Q56-105 0-67V100ZM-94-37q37-8 68 8M-94 0q37-8 68 8M26-29q31-16 68-8M26 8q31-16 68-8"/></g>'''
+        shape = f'''<ellipse cx="0" cy="116" rx="132" ry="16" fill="{fill}" opacity=".08"/>
+<path d="M0-47q-64-43-125-13V95q67-25 125 14 58-39 125-14V-60Q64-90 0-47Z" fill="#293925" stroke="{fill}" stroke-width="4"/>
+<path d="M0-60q-55-38-112-16V78q59-20 112 17 53-37 112-17V-76Q55-98 0-60Z" fill="#f4f4e8"/>
+<path d="M0-59V94M-85-41q31-8 60 7M-85-11q31-8 60 7M-85 19q31-8 60 7M25-34q29-15 60-7M25-4q29-15 60-7M25 26q29-15 60-7" fill="none" stroke="#657b55" stroke-width="4" stroke-linecap="round"/>
+<path d="M63-88v53l13-11 13 8v-51" fill="{fill}"/>
+<g class="bio-pulse" fill="{fill}"><path d="m-79-130 5 14 15 5-15 5-5 14-5-14-15-5 15-5Z"/><path d="m52-147 4 11 12 4-12 4-4 11-4-11-12-4 12-4Z"/></g>'''
     elif theme == "love":
         shape = f'''<path class="bio-pulse" d="M0 100-100-3Q-148-70-79-96-29-113 0-65 29-113 79-96 148-70 100-3Z" fill="{fill}"/>
 <path d="M-62-68q-25 5-23 29" fill="none" stroke="{art.INK}" stroke-width="7" stroke-linecap="round"/>'''
@@ -85,7 +90,7 @@ def bio_figure(bio, x, y, scale=1):
 
 def carousel(projects, card_for, mobile=False):
     """Embed all artwork; CSS slides the viewport without JavaScript or fetches."""
-    width, height = (600, 820) if mobile else (1200, 790)
+    width, height = (600, 1180) if mobile else (1200, 790)
     groups = [projects[i:i + 3] for i in range(0, len(projects), 3)]
     if not groups:
         art.svg('build-carousel-mobile.svg' if mobile else 'build-carousel.svg', width, height,
@@ -108,7 +113,9 @@ def carousel(projects, card_for, mobile=False):
 @keyframes project-slide{{{''.join(stops)}}}
 .carousel-progress{{animation:project-progress 6s linear infinite;transform-origin:0 0}}
 @keyframes project-progress{{from{{transform:scaleX(0)}}to{{transform:scaleX(1)}}}}
-@media(prefers-reduced-motion:reduce){{.carousel-track,.carousel-progress{{animation:none}}}}
+.scene-float{{animation:scene-drift 5s ease-in-out infinite}}
+@keyframes scene-drift{{0%,100%{{transform:translateY(0)}}50%{{transform:translateY(-5px)}}}}
+@media(prefers-reduced-motion:reduce){{.carousel-track,.carousel-progress,.scene-float{{animation:none}}}}
 </style>
 <rect width="{width}" height="{height}" rx="18" fill="{art.INK}"/>
 <g clip-path="url(#carousel-window)"><g class="carousel-track">'''
@@ -116,9 +123,9 @@ def carousel(projects, card_for, mobile=False):
     for page, group in enumerate(groups):
         content = ''
         for slot, repo in enumerate(group):
-            name = card_for(repo, slot, mobile=mobile and slot == 0)
+            name = card_for(repo, slot, mobile=mobile)
             root = ET.parse(art.ASSETS / name).getroot()
-            x, y, w, h = ((0, 0, 600, 550) if slot == 0 else ((slot - 1) * 310, 570, 290, 180)) if mobile else (
+            x, y, w, h = (0, slot * 384, 600, 360) if mobile else (
                 (0, 0, 1200, 340) if slot == 0 else ((slot - 1) * 612, 364, 588, 360))
             root.attrib.update(x=str(x), y=str(y), width=str(w), height=str(h))
             root.set('data-repository', repo['name'])

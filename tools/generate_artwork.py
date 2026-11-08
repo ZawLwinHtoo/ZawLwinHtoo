@@ -15,14 +15,16 @@ def text(x, y, content, size=20, fill=CREAM, weight=400, mono=False, extra=""):
             f'font-size="{size}" font-weight="{weight}" {extra}>{escape(content)}</text>')
 
 
-def svg(name, w, h, title, content):
+def svg(name, w, h, title, content, write=True):
     art = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title">
 <title id="title">{escape(title)}</title>
 {content}
 </svg>
 '''
     ET.fromstring(art)
-    (ASSETS / name).write_text(art, encoding="utf-8")
+    if write:
+        (ASSETS / name).write_text(art, encoding="utf-8", newline="\n")
+    return art
 
 
 def bug(x, y, scale=1):
@@ -40,7 +42,7 @@ def bug(x, y, scale=1):
 </g>'''
 
 
-def hero(mobile=False):
+def hero(mobile=False, write=True):
     w, h = (600, 690) if mobile else (1200, 460)
     base = f'''<defs>
 <pattern id="dot-grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#8a9885" opacity=".18"/></pattern>
@@ -85,8 +87,8 @@ def hero(mobile=False):
 <path d="M44 391h1112" stroke="#374132"/>
 {text(44, 429, 'CODE. BREAK. LEARN. REPEAT.', 20, mono=True)}
 {text(964, 429, '@ZawLwinHtoo', 17, MUTED, mono=True)}'''
-    svg("profile-banner-mobile.svg" if mobile else "profile-banner.svg", w, h,
-        "Zaw Lwin Htoo / Enjoy bugs / Code, break, learn, repeat", content)
+    return svg("profile-banner-mobile.svg" if mobile else "profile-banner.svg", w, h,
+        "Zaw Lwin Htoo / Enjoy bugs / Code, break, learn, repeat", content, write=write)
 
 
 def route_map(x=0, y=0, scale=1):
