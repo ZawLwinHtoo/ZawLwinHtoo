@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">Zaw Lwin Htoo</title>
+  <desc id="desc">Building ideas into useful software</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="0.55" stop-color="#111c3a"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#c7d2fe" stroke-opacity=".08" stroke-width="1"/>
+    </pattern>
+    <filter id="blur"><feGaussianBlur stdDeviation="28"/></filter>
+  </defs>
+  <rect width="1200" height="320" rx="24" fill="url(#bg)"/>
+  <rect width="1200" height="320" rx="24" fill="url(#grid)"/>
+  <circle cx="1010" cy="84" r="120" fill="#4f46e5" opacity=".24" filter="url(#blur)"/>
+  <circle cx="830" cy="270" r="110" fill="#06b6d4" opacity=".16" filter="url(#blur)"/>
+  <path d="M770 0v320M920 0v320M1070 0v320" stroke="#c7d2fe" stroke-opacity=".08"/>
+  <path d="M770 220h150v-72h150v-76h130" fill="none" stroke="url(#glow)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+  <circle cx="920" cy="220" r="5" fill="#67e8f9"/>
+  <circle cx="1070" cy="148" r="5" fill="#a5b4fc"/>
+  <rect x="70" y="74" width="44" height="4" rx="2" fill="url(#glow)"/>
+  <text x="70" y="151" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" letter-spacing="-1">Zaw Lwin Htoo</text>
+  <text x="72" y="197" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="21" letter-spacing=".4">BUILDING IDEAS INTO USEFUL SOFTWARE</text>
+  <text x="72" y="256" fill="#67e8f9" font-family="Consolas, monospace" font-size="16">&lt; learn / build / repeat /&gt;</text>
+</svg>
