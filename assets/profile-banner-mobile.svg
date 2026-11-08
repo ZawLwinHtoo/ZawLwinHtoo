@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="690" viewBox="0 0 600 690" role="img" aria-labelledby="title">
-<title id="title">Zaw Lwin Htoo / Enjoy bugs / Code, break, learn, repeat</title>
+<title id="title">Zaw Lwin Htoo / Enjoy bugs!!!</title>
 <defs>
-<pattern id="dot-grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#8a9885" opacity=".18"/></pattern>
+<pattern id="dot-grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#8a9885" opacity=".18" /></pattern>
 </defs>
 <style>
 .traffic{animation:travel 9s linear infinite}
@@ -12,27 +12,25 @@
 @keyframes blink{0%,46%,49%,100%{opacity:1}47%,48%{opacity:.1}}
 @media(prefers-reduced-motion:reduce){.traffic,.ring,.eye{animation:none}}
 </style>
-<rect width="600" height="690" rx="20" fill="#131613"/>
-<rect width="600" height="690" rx="20" fill="url(#dot-grid)"/>
-<g id="identity"><path d="M30 32h14v14H30zM48 32h6v6h-6zM48 42h6v12h-6z" fill="#c9ff59"/>
-<text x="70" y="48" fill="#f4f4e8" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="700" >ZAW LWIN HTOO</text></g>
-<text x="30" y="158" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="112" font-weight="900" letter-spacing="-6">ENJOY</text>
-<text x="30" y="271" fill="#c9ff59" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="112" font-weight="900" letter-spacing="-6">BUGS.</text>
-<text x="34" y="312" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="400" >@ZawLwinHtoo</text>
-<circle cx="309" cy="479" r="137" fill="none" stroke="#374132"/>
-<circle class="ring" cx="309" cy="479" r="116" fill="none" stroke="#c9ff59" stroke-dasharray="3 12"/>
+<rect width="600" height="690" rx="20" fill="#131613" />
+<rect width="600" height="690" rx="20" fill="url(#dot-grid)" />
+<g id="identity"><path d="M30 32h14v14H30zM48 32h6v6h-6zM48 42h6v12h-6z" fill="#c9ff59" />
+<text x="70" y="48" fill="#f4f4e8" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="700">ZAW LWIN HTOO</text></g>
+<text x="34" y="312" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="400">@ZawLwinHtoo</text>
+<circle cx="309" cy="479" r="137" fill="none" stroke="#374132" />
+<circle class="ring" cx="309" cy="479" r="116" fill="none" stroke="#c9ff59" stroke-dasharray="3 12" />
 <g id="circuit-beetle" transform="translate(309 485) scale(0.76)">
 <g fill="none" stroke="#c9ff59" stroke-width="5" stroke-linecap="square" stroke-linejoin="round">
-<path d="M-44-20-85-44h-24m65 55h-54l-14 20m71 13-36 30v25M44-20l41-24h24M44 11h54l14 20M41 44l36 30v25"/>
-<path d="M-21-85-43-113v-16M21-85l22-28v-16"/>
+<path d="M-44-20-85-44h-24m65 55h-54l-14 20m71 13-36 30v25M44-20l41-24h24M44 11h54l14 20M41 44l36 30v25" />
+<path d="M-21-85-43-113v-16M21-85l22-28v-16" />
 </g>
-<g fill="#c9ff59"><circle cx="-43" cy="-134" r="6"/><circle cx="43" cy="-134" r="6"/>
-<path d="M-39-62a39 32 0 0 1 78 0v24h-78z"/>
-<path d="M-4-29C-75-48-77 70-4 91ZM4-29C75-48 77 70 4 91Z"/>
+<g fill="#c9ff59"><circle cx="-43" cy="-134" r="6" /><circle cx="43" cy="-134" r="6" />
+<path d="M-39-62a39 32 0 0 1 78 0v24h-78z" />
+<path d="M-4-29C-75-48-77 70-4 91ZM4-29C75-48 77 70 4 91Z" />
 </g>
-<g fill="#131613"><rect class="eye" x="-21" y="-68" width="10" height="10" rx="2"/><rect class="eye" x="11" y="-68" width="10" height="10" rx="2"/></g>
-<path d="M-40-2h18v22h-16m78-22H22v22h16M-29 46h12m34 0h12" fill="none" stroke="#131613" stroke-width="4"/>
+<g fill="#131613"><rect class="eye" x="-21" y="-68" width="10" height="10" rx="2" /><rect class="eye" x="11" y="-68" width="10" height="10" rx="2" /></g>
+<path d="M-40-2h18v22h-16m78-22H22v22h16M-29 46h12m34 0h12" fill="none" stroke="#131613" stroke-width="4" />
 </g>
-<path d="M30 636h540" stroke="#374132"/>
-<text x="30" y="668" fill="#f4f4e8" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="400" >CODE. BREAK. LEARN. REPEAT.</text>
-</svg>
+<path d="M30 636h540" stroke="#374132" />
+<text x="30" y="668" fill="#f4f4e8" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="400">CODE. BREAK. LEARN. REPEAT.</text>
+<text x="30" y="165.2" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="89" font-weight="900">ENJOY</text><text x="30" y="259.5" fill="#c9ff59" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="89" font-weight="900">BUGS!!!</text></svg>

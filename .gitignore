@@ -1,0 +1,4 @@
+.profile-snapshot.json
+__pycache__/
+*.pyc
+.preview/

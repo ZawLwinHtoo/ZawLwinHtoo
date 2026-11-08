@@ -1,11 +1,11 @@
 <picture>
   <source media="(max-width: 600px)" srcset="assets/profile-banner-mobile.svg">
-  <img src="assets/profile-banner.svg" alt="Zaw Lwin Htoo. Enjoy bugs. Code, break, learn, repeat. An animated circuit beetle on charcoal and acid green." width="100%">
+  <img src="assets/profile-banner.svg" alt="Zaw Lwin Htoo. Enjoy bugs!!!" width="100%">
 </picture>
 
 <p align="center">
-  <b>Hi, I'm Zaw.</b> I turn ideas into working software, one experiment at a time.<br>
-  Web apps, useful tools, and a healthy curiosity about what happens when things break.
+  <b>Hi, I'm Zaw Lwin Htoo.</b><br>
+  Enjoy bugs!!!
 </p>
 
 <p align="center">
@@ -18,35 +18,44 @@
 
 ## Selected builds
 
-<a href="https://github.com/ZawLwinHtoo/lannpya-ai">
-  <picture>
-    <source media="(max-width: 600px)" srcset="assets/project-lannpya-mobile.svg">
-    <img src="assets/project-lannpya.svg" alt="01. LannPya AI — delivery tooling for Myanmar, illustrated with a dispatch route map. Open the repository." width="100%">
-  </picture>
+Three at a time, rotating through 13 public repositories. Refreshes automatically about every 30 minutes.
+
+<a href="https://github.com/ZawLwinHtoo/NCC-">
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/build-1-mobile.svg">
+  <img src="assets/build-1.svg" alt="NCC. Open the repository." width="100%">
+</picture>
 </a>
 
-Delivery tooling for Myanmar merchants and couriers: Burmese address parsing, dispatcher workflows, and rider queues. [Explore LannPya AI →](https://github.com/ZawLwinHtoo/lannpya-ai)
+<p><b>NCC</b><br>
+Config files for my GitHub profile.</p>
+
+<p><a href="https://github.com/ZawLwinHtoo/NCC-">Explore the project →</a></p>
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-<a href="https://github.com/ZawLwinHtoo/menu-maker"><img src="assets/project-menu.svg" alt="02. Menu Maker. A graphic menu with orange accents. Open the repository." width="100%"></a>
+<a href="https://github.com/ZawLwinHtoo/rescura-sync">
+<img src="assets/build-2.svg" alt="rescura sync. Open the repository." width="100%">
+</a>
 
-**Menu Maker**<br>
-A web app for creating and managing menus.
+<p><b>rescura sync</b><br>
+Explore the code and project files.</p>
 
-[Explore the project →](https://github.com/ZawLwinHtoo/menu-maker)
+<p><a href="https://github.com/ZawLwinHtoo/rescura-sync">Explore the project →</a></p>
 
 </td>
 <td width="50%" valign="top">
 
-<a href="https://github.com/ZawLwinHtoo/parking-management-system"><img src="assets/project-parking.svg" alt="03. Parking Management. An illustrated parking grid in electric blue. Open the repository." width="100%"></a>
+<a href="https://github.com/ZawLwinHtoo/sce-release-management">
+<img src="assets/build-3.svg" alt="sce release management. Open the repository." width="100%">
+</a>
 
-**Parking Management**<br>
-User and admin interfaces with supporting backends.
+<p><b>sce release management</b><br>
+Explore the code and project files.</p>
 
-[Explore the project →](https://github.com/ZawLwinHtoo/parking-management-system)
+<p><a href="https://github.com/ZawLwinHtoo/sce-release-management">Explore the project →</a></p>
 
 </td>
 </tr>
