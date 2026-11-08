@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-labelledby="title">
+<title id="title">Zaw Lwin Htoo / a dancing elephant</title>
+<defs>
+<pattern id="dot-grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#8a9885" opacity=".18" /></pattern>
+</defs>
+<style>
+.traffic{animation:travel 9s linear infinite}
+.ring{animation:breathe 5s ease-in-out infinite}
+.eye{animation:blink 8s step-end infinite}
+@keyframes travel{to{stroke-dashoffset:-100}}
+@keyframes breathe{0%,100%{opacity:.3}50%{opacity:.7}}
+@keyframes blink{0%,46%,49%,100%{opacity:1}47%,48%{opacity:.1}}
+@media(prefers-reduced-motion:reduce){.traffic,.ring,.eye{animation:none}}
+
+.bio-wave{animation:hello-wave 2.4s ease-in-out infinite;transform-origin:0px 55px}
+@keyframes hello-wave{0%,60%,100%{transform:rotate(0deg)}15%,35%{transform:rotate(13deg)}25%,45%{transform:rotate(-10deg)}}
+.bio-cursor{animation:cursor-blink 1s step-end infinite}
+@keyframes cursor-blink{50%{opacity:0}}
+.bio-pulse{animation:bio-pulse 3s ease-in-out infinite;transform-origin:0 0}
+@keyframes bio-pulse{0%,100%{opacity:.65}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.bio-wave,.bio-cursor,.bio-pulse{animation:none}}
+</style>
+<rect width="1200" height="460" rx="20" fill="#131613" />
+<rect width="1200" height="460" rx="20" fill="url(#dot-grid)" />
+<g id="identity"><path d="M30 32h14v14H30zM48 32h6v6h-6zM48 42h6v12h-6z" fill="#c9ff59" />
+<text x="70" y="48" fill="#f4f4e8" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="700">ZAW LWIN HTOO</text></g>
+<text x="904" y="48" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400">GITHUB / PROFILE</text>
+<g id="headline">
+</g>
+<g id="specimen">
+<circle cx="884" cy="233" r="158" fill="#1b2119" stroke="#374132" />
+<circle class="ring" cx="884" cy="233" r="139" fill="none" stroke="#c9ff59" stroke-dasharray="3 14" />
+<path d="M700 233h368M884 61v344" stroke="#374132" stroke-dasharray="4 8" />
+<path d="M600 315h78v-82h48M1041 233h84v-83h45" fill="none" stroke="#46513e" stroke-width="2" />
+<path class="traffic" d="M600 315h78v-82h48" fill="none" stroke="#c9ff59" stroke-width="3" pathLength="100" stroke-dasharray="8 92" />
+<text x="1020" y="352" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="15" font-weight="400">A DANCING ELEPHANT</text></g>
+<path d="M44 391h1112" stroke="#374132" />
+<text x="44" y="429" fill="#f4f4e8" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="400">CREATE. EXPLORE. KEEP GOING.</text>
+<text x="964" y="429" fill="#a5afa0" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" font-weight="400">@ZawLwinHtoo</text>
+<g id="bio-illustration" data-theme="semantic" data-subject="a dancing elephant" transform="translate(884 245) scale(0.95)"><defs><clipPath id="bio-ai-clip"><circle r="139" /></clipPath></defs><g clip-path="url(#bio-ai-clip)"><g transform="translate(-128 -128)"><g><rect x="8" y="8" width="240" height="240" fill="#131613" /><circle cx="120" cy="120" r="100" fill="#c9ff59" /><ellipse cx="120" cy="120" rx="80" ry="60" fill="#c9ff59" /><polygon points="120,120 100,100 80,120 100,140 80,140 120,140" fill="#c9ff59" /><line x1="100" y1="100" x2="120" y2="120" stroke-width="5" stroke="#c9ff59" /><line x1="100" y1="140" x2="120" y2="120" stroke-width="5" stroke="#c9ff59" /></g></g></g></g><text x="44" y="166.9" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="83" font-weight="900" data-bio-line="true">a</text><text x="44" y="254.9" fill="#c9ff59" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="83" font-weight="900" data-bio-line="true">dancing</text><text x="44" y="342.9" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="83" font-weight="900" data-bio-line="true">elephant</text></svg>

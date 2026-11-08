@@ -1,0 +1,7 @@
+{
+  "bio": "Enjoy Learning",
+  "subject": "Learning",
+  "svg": "<g transform=\"translate(-128 -128)\"><g><rect x=\"8\" y=\"8\" width=\"240\" height=\"240\" fill=\"#131613\" /><rect x=\"8\" y=\"8\" width=\"240\" height=\"240\" fill=\"#c9ff59\" /><rect x=\"8\" y=\"8\" width=\"240\" height=\"240\" fill=\"#f4f4e8\" /><rect x=\"8\" y=\"8\" width=\"240\" height=\"240\" fill=\"#293925\" /><rect x=\"8\" y=\"8\" width=\"240\" height=\"240\" fill=\"#657b55\" /></g></g>",
+  "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF",
+  "revision": "f86cb2c1fa58255f8052cc32aeede1b7482d4361"
+}
