@@ -1,6 +1,6 @@
 <picture>
-  <source media="(max-width: 600px)" srcset="assets/profile-banner-mobile.svg?v=ef4f6759eeda">
-  <img src="assets/profile-banner.svg?v=465473846d4c" alt="Zaw Lwin Htoo. Enjoy Learning" width="100%">
+  <source media="(max-width: 600px)" srcset="assets/profile-banner-mobile.svg?v=13cb8cb7096f">
+  <img src="assets/profile-banner.svg?v=934a8e4ff2ff" alt="Zaw Lwin Htoo. Enjoy Learning" width="100%">
 </picture>
 
 <p align="center">
