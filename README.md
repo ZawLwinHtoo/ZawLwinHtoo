@@ -1,6 +1,6 @@
 <picture>
-  <source media="(max-width: 600px)" srcset="assets/profile-banner-mobile.svg?v=ae85e7f46263">
-  <img src="assets/profile-banner.svg?v=8e87e3eb4b71" alt="Zaw Lwin Htoo. bugs" width="100%">
+  <source media="(max-width: 600px)" srcset="assets/profile-banner-mobile.svg?v=b65b7958b81e">
+  <img src="assets/profile-banner.svg?v=18308c860f2b" alt="Zaw Lwin Htoo. learn" width="100%">
 </picture>
 
 <p align="center">
