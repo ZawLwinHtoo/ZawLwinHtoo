@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="690" viewBox="0 0 600 690" role="img" aria-labelledby="title">
-<title id="title">Zaw Lwin Htoo / learn</title>
+<title id="title">Zaw Lwin Htoo / Enjoy bugs!!!</title>
 <defs>
 <pattern id="dot-grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#8a9885" opacity=".18" /></pattern>
 </defs>
@@ -28,35 +28,16 @@
 <circle cx="309" cy="479" r="137" fill="none" stroke="#374132" />
 <circle class="ring" cx="309" cy="479" r="116" fill="none" stroke="#c9ff59" stroke-dasharray="3 12" />
 <path d="M30 636h540" stroke="#374132" />
-<text x="30" y="668" fill="#f4f4e8" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="400">CREATE. EXPLORE. KEEP GOING.</text>
-<g id="bio-illustration" data-theme="semantic" data-subject="learning" transform="translate(309 485) scale(0.76)"><defs><clipPath id="bio-ai-clip"><circle r="139" /></clipPath></defs><g clip-path="url(#bio-ai-clip)"><g><g transform="translate(-130 -130) scale(3.2)"><g>
-  <g>
-    <path fill="#fff" d="M61.2167,21.6411,37.911,15.0386a1.0068,1.0068,0,0,0-.5537.0019l-22.5947,6.627a.9484.9484,0,0,0-.1365.0719,5.3829,5.3829,0,0,0-1.8343,9.5426,5.3642,5.3642,0,0,0,.0663,8.6968,5.3776,5.3776,0,0,0,1.4856,9.5022l23.0146,6.7128a1.0034,1.0034,0,0,0,.5547.002l23.3057-6.6514a1.0008,1.0008,0,0,0,.7255-.9619V22.603A1,1,0,0,0,61.2167,21.6411Z" />
-    <polygon fill="#92d3f5" points="37.638 15.976 60.944 22.579 37.638 29.231 15.044 22.603 37.638 15.976" />
-    <path fill="#61b2e4" d="M15.0823,24.7275,37.0756,31.174a2,2,0,0,0,1.1113.0039l23.2947-6.7653a.613.613,0,0,0,.442-.5794l.0189-1.2508L37.6381,29.2547,15.08,22.6425a4.4,4.4,0,0,0-.4554,8.4813l23.014,6.713,24.2115-6.91.04-1.2423a.6255.6255,0,0,0-.7968-.6215L37.6442,35.7552l-22.4226-6.54a2.4,2.4,0,0,1-.1393-4.4873" />
-    <path fill="#d22f27" d="M15.0823,33.4092l21.9933,6.4465a1.9988,1.9988,0,0,0,1.1113.004l23.2947-6.7653a.6131.6131,0,0,0,.442-.5794l.0189-1.2508L37.6381,37.9365,15.08,31.3243a4.4,4.4,0,0,0-.4554,8.4813l23.014,6.713,24.2115-6.91.04-1.2424a.6254.6254,0,0,0-.7968-.6214L37.6442,44.437l-22.4226-6.54a2.4,2.4,0,0,1-.1393-4.4873" />
-    <path fill="#5c9e31" d="M15.0823,42.1549l21.9933,6.4465a2,2,0,0,0,1.1113.0039L61.4816,41.84a.613.613,0,0,0,.442-.5794l.0189-1.2507L37.6381,46.6821,15.08,40.07a4.4,4.4,0,0,0-.4554,8.4813l23.014,6.713,24.2115-6.91.04-1.2424a.6254.6254,0,0,0-.7968-.6214L37.6442,53.1827l-22.4226-6.54a2.4,2.4,0,0,1-.1393-4.4873" />
-    <polygon fill="#61b2e4" points="44.32 17.794 38.594 16.172 16 22.799 21.81 24.504 44.32 17.794" />
-  </g>
-  <g>
-    <polygon fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="37.638 16 60.944 22.603 37.638 29.255 15.044 22.627 37.638 16" />
-    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.08,22.6425a4.4,4.4,0,0,0-.4554,8.4813l23.0141,6.713,23.3057-6.6516" />
-    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.08,31.2942a4.4,4.4,0,0,0-.4554,8.4813l23.0141,6.713,23.3057-6.6516" />
-    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.08,40.04a4.4,4.4,0,0,0-.4554,8.4813l23.0141,6.713,23.3057-6.6516" />
-  </g>
-</g></g><g transform="translate(30 30)"><circle cx="35" cy="35" r="39" fill="#f4f4e8" /><g transform="scale(.97)"><g>
-  <g>
-    <path fill="#d0cfce" d="m35.71,64.65c4.779,0,7.509-2.244,8.156-5.151h-16.31c.647,2.907,3.376,5.151,8.155,5.151h-.001Z" />
-    <path fill="#fcea2b" d="m45.2028,10.655s-12.23-3.457-18.2,1.269c-5.969,4.726-6.401,15.6-6.401,15.6.5848,2.213,4.226,8.493,4.226,8.493.54.9111,2.253,7.481,3.249,11.36h15.92c.8662-2.845,4.35-13.15,4.805-14.21.584-1.363,1.58-4.016,2.083-5.017,1.21-2.409,1.1663-4.533.5378-7.027-1.3571-5.385-2.4738-6.7228-6.221-10.47l.0012.002Z" />
-    <path fill="#fff" d="m35.71,7.202c-8.532,0-16.5,6.752-16.5,15.28,0,1.079-.2641,4.491,1.217,4.491,0,0,2.393-7.825,8.362-12.55,5.969-4.725,15.52-3.725,15.52-3.725-.6645-2.045-5.55-3.499-8.596-3.499l-.003.003Z" />
-  </g>
-  <g>
-    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m52.55,23.75c0,3.985-1.785,5.908-3.754,10.5-.5028,1.172-4.211,13.38-4.211,13.38h-17.17s-2.981-11.67-3.546-12.62c-2.37-3.998-4.419-6.91-4.419-11.26,0-9.141,7.41-16.55,16.55-16.55s16.55,7.41,16.55,16.55Z" />
-    <line x1="36" x2="36" y1="47.22" y2="35.28" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-    <line x1="41.97" x2="30.03" y1="35.28" y2="35.28" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.696" d="m44.16,58.79c0,3.24-3.651,5.867-8.155,5.867s-8.155-2.627-8.155-5.867h16.31Z" />
-    <line x1="27.99" x2="44.01" y1="54.98" y2="51.51" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.965" />
-    <line x1="38.2" x2="43.98" y1="56.07" y2="54.89" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-    <line x1="28.02" x2="33.8" y1="51.6" y2="50.42" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-  </g>
-</g></g></g></g></g></g><text x="30" y="220.0" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="112" font-weight="900" data-bio-line="true">learn</text></svg>
+<text x="30" y="668" fill="#f4f4e8" font-family="Consolas, 'Liberation Mono', monospace" font-size="20" font-weight="400">CODE. BREAK. LEARN. REPEAT.</text>
+<g id="circuit-beetle" transform="translate(309 485) scale(0.76)">
+<g fill="none" stroke="#c9ff59" stroke-width="5" stroke-linecap="square" stroke-linejoin="round">
+<path d="M-44-20-85-44h-24m65 55h-54l-14 20m71 13-36 30v25M44-20l41-24h24M44 11h54l14 20M41 44l36 30v25" />
+<path d="M-21-85-43-113v-16M21-85l22-28v-16" />
+</g>
+<g fill="#c9ff59"><circle cx="-43" cy="-134" r="6" /><circle cx="43" cy="-134" r="6" />
+<path d="M-39-62a39 32 0 0 1 78 0v24h-78z" />
+<path d="M-4-29C-75-48-77 70-4 91ZM4-29C75-48 77 70 4 91Z" />
+</g>
+<g fill="#131613"><rect class="eye" x="-21" y="-68" width="10" height="10" rx="2" /><rect class="eye" x="11" y="-68" width="10" height="10" rx="2" /></g>
+<path d="M-40-2h18v22h-16m78-22H22v22h16M-29 46h12m34 0h12" fill="none" stroke="#131613" stroke-width="4" />
+</g><text x="30" y="165.2" fill="#f4f4e8" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="89" font-weight="900" data-bio-line="true">Enjoy</text><text x="30" y="259.5" fill="#c9ff59" font-family="'Arial Black', 'Segoe UI', Arial, sans-serif" font-size="89" font-weight="900" data-bio-line="true">bugs!!!</text></svg>
