@@ -14,8 +14,8 @@
 Three at a time. All 14 public projects. A new slide every six seconds.
 
 <picture>
-  <source media="(max-width: 600px)" srcset="assets/build-carousel-mobile.svg?v=25336cf9494e">
-  <img src="assets/build-carousel.svg?v=10189760ffc8" alt="Animated project showcase. Three cards slide to the next projects every six seconds. Repository links are below." width="100%">
+  <source media="(max-width: 600px)" srcset="assets/build-carousel-mobile.svg?v=b38b97afffab">
+  <img src="assets/build-carousel.svg?v=b1d4a7dc9003" alt="Animated project showcase. Three cards slide to the next projects every six seconds. Repository links are below." width="100%">
 </picture>
 
 <details>
