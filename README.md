@@ -11,11 +11,11 @@
 
 ## Selected builds
 
-Three at a time. All 13 public projects. A new slide every six seconds.
+Three at a time. All 14 public projects. A new slide every six seconds.
 
 <picture>
-  <source media="(max-width: 600px)" srcset="assets/build-carousel-mobile.svg?v=a5c5e8e339e5">
-  <img src="assets/build-carousel.svg?v=d77589c55015" alt="Animated project showcase. Three cards slide to the next projects every six seconds. Repository links are below." width="100%">
+  <source media="(max-width: 600px)" srcset="assets/build-carousel-mobile.svg?v=25336cf9494e">
+  <img src="assets/build-carousel.svg?v=10189760ffc8" alt="Animated project showcase. Three cards slide to the next projects every six seconds. Repository links are below." width="100%">
 </picture>
 
 <details>
@@ -34,6 +34,8 @@ Three at a time. All 13 public projects. A new slide every six seconds.
 <p><a href="https://github.com/ZawLwinHtoo/conveyor_edge_ai"><b>conveyor edge ai</b></a> — Explore the code and project files.</p>
 
 <p><a href="https://github.com/ZawLwinHtoo/distributed-whiteboard"><b>distributed whiteboard</b></a> — Explore the code and project files.</p>
+
+<p><a href="https://github.com/ZawLwinHtoo/NASA_Space_APP_Challenge"><b>NASA Space APP Challenge</b></a> — Explore the code and project files.</p>
 
 <p><a href="https://github.com/ZawLwinHtoo/NCC-"><b>NCC</b></a> — Config files for my GitHub profile.</p>
 
